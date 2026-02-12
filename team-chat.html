@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Chat - DevMate</title>
+    <meta name="description" content="Collaborate with your team members in dedicated project chats.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="../index.html" class="nav-logo">DevMate</a>
+                <ul class="nav-links">
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="discover.html" class="nav-link">Discover</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="teams.html" class="nav-link">Teams</a></li>
+                    <li><a href="team-chat.html" class="nav-link active">Team Chat</a></li>
+                    <li><a href="personal-chat.html" class="nav-link">Personal Chat</a></li>
+                    <li><a href="events.html" class="nav-link">Events</a></li>
+                    <li><a href="resources.html" class="nav-link">Resources</a></li>
+                    <!-- Notification Bell -->
+                    <li style="position: relative;">
+                        <button class="notification-bell" id="notificationBell" style="background: none; border: none; color: var(--text-primary); font-size: 1.25rem; cursor: pointer; position: relative;">
+                            🔔
+                            <span class="notification-dot" id="notification-dot" style="position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; background: #ef4444; border-radius: 50%; display: block;"></span>
+                        </button>
+                        <div class="notification-dropdown" id="notificationDropdown" style="position: absolute; top: 100%; right: 0; width: 300px; background: var(--bg-secondary); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 1rem; display: none; z-index: 1000; box-shadow: var(--shadow-lg);">
+                            <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.5rem;">Notifications</div>
+                            <div style="color: var(--text-secondary); font-size: 0.875rem; padding: 0.5rem 0; border-bottom: 1px solid var(--glass-border);">
+                                <span>New message from Priya Sharma</span>
+                                <span style="float: right; color: var(--text-muted);">2 min ago</span>
+                            </div>
+                            <div style="color: var(--text-secondary); font-size: 0.875rem; padding: 0.5rem 0;">
+                                <span>Your team "AI Study Assistant" has an update</span>
+                                <span style="float: right; color: var(--text-muted);">5 min ago</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2 class="sidebar-title">Dashboard</h2>
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-item-link">
+                            <span>🏠</span>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="discover.html" class="nav-item-link">
+                            <span>🔍</span>
+                            <span>Discover</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-item-link">
+                            <span>💡</span>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="teams.html" class="nav-item-link">
+                            <span>👥</span>
+                            <span>Teams</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="team-chat.html" class="nav-item-link">
+                            <span>💬</span>
+                            <span>Team Chat</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="personal-chat.html" class="nav-item-link">
+                            <span>📱</span>
+                            <span>Personal Chat</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="events.html" class="nav-item-link">
+                            <span>📅</span>
+                            <span>Events</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="resources.html" class="nav-item-link">
+                            <span>📚</span>
+                            <span>Resources</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="profile.html" class="nav-item-link">
+                            <span>👤</span>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- User Profile Card -->
+            <div class="glass-panel" style="margin-top: auto; padding: 1rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">
+                        M
+                    </div>
+                    <div>
+                        <div style="color: var(--text-primary); font-weight: 600; font-size: 0.875rem;">Marthanda</div>
+                        <div style="color: var(--text-muted); font-size: 0.75rem;">SRM Institute</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="chat-container">
+                <!-- Team List -->
+                <div class="team-list-sidebar" style="max-height: calc(100vh - 120px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--accent-primary) var(--bg-secondary);">
+                    <h3 style="color: var(--text-primary); margin-bottom: 1rem;">Your Teams</h3>
+                    <ul id="team-list">
+                        <li class="team-item active" data-team-id="team1">
+                            <div class="avatar" style="background: linear-gradient(135deg, #FF6B6B, #4ECDC4);">AI</div>
+                            <span>AI-Powered Study Assistant</span>
+                        </li>
+                        <li class="team-item" data-team-id="team2">
+                            <div class="avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);">SC</div>
+                            <span>Sustainable Campus App</span>
+                        </li>
+                        <li class="team-item" data-team-id="team3">
+                            <div class="avatar" style="background: linear-gradient(135deg, #FFD700, #FFA500);">BV</div>
+                            <span>Blockchain Voting System</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Chat Area -->
+                <div class="chat-area">
+                    <div class="chat-header">
+                        <h3 id="chat-team-name" style="color: var(--text-primary);">AI-Powered Study Assistant</h3>
+                        <div class="team-members-avatars">
+                            <div class="avatar" style="background: linear-gradient(135deg, #FF6B6B, #4ECDC4);">PS</div>
+                            <div class="avatar" style="background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));">M</div>
+                            <div class="avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);">AP</div>
+                            <div class="avatar" style="background: linear-gradient(135deg, #FFD700, #FFA500);">AR</div>
+                        </div>
+                    </div>
+                    <div class="messages-container" id="messages-container" style="max-height: calc(100vh - 280px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--accent-primary) var(--bg-secondary); padding: 1rem;">
+                        <!-- Messages will be loaded here -->
+                        <div class="message received">
+                            <div class="avatar" style="background: linear-gradient(135deg, #FF6B6B, #4ECDC4);">PS</div>
+                            <div class="message-content">
+                                <span class="message-author">Priya Sharma</span>
+                                <p>Hey team, I've just pushed the initial data preprocessing script to the repo. Let me know if you face any issues running it.</p>
+                                <span class="message-time">10:00 AM</span>
+                            </div>
+                        </div>
+                        <div class="message sent">
+                            <div class="message-content">
+                                <p>Got it, Priya! I'll pull the changes and start working on the model integration today.</p>
+                                <span class="message-time">10:05 AM</span>
+                            </div>
+                            <div class="avatar" style="background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));">M</div>
+                        </div>
+                        <div class="message received">
+                            <div class="avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);">AP</div>
+                            <div class="message-content">
+                                <span class="message-author">Arjun Patel</span>
+                                <p>I've reviewed the script, looks good! I'll start setting up the API endpoints for the frontend.</p>
+                                <span class="message-time">10:15 AM</span>
+                            </div>
+                        </div>
+                        <div class="message received">
+                            <div class="avatar" style="background: linear-gradient(135deg, #FFD700, #FFA500);">AR</div>
+                            <div class="message-content">
+                                <span class="message-author">Ananya Reddy</span>
+                                <p>Great work everyone! I'll update the project documentation with the latest progress.</p>
+                                <span class="message-time">10:20 AM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message-input-area">
+                        <input type="text" placeholder="Type your message..." class="message-input">
+                        <button class="btn btn-primary">Send</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script>
+        function toggleNotifications() {
+            const dot = document.getElementById("notification-dot");
+            dot.style.display = dot.style.display === "none" ? "block" : "none";
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const teamItems = document.querySelectorAll(".team-item");
+            const chatTeamName = document.getElementById("chat-team-name");
+            const messagesContainer = document.getElementById("messages-container");
+
+            const teamChats = {
+                team1: [
+                    { author: "Priya Sharma", avatar: "PS", content: "Hey team, I've just pushed the initial data preprocessing script to the repo. Let me know if you face any issues running it.", time: "10:00 AM", type: "received" },
+                    { author: "Marthanda", avatar: "M", content: "Got it, Priya! I'll pull the changes and start working on the model integration today.", time: "10:05 AM", type: "sent" },
+                    { author: "Arjun Patel", avatar: "AP", content: "I've reviewed the script, looks good! I'll start setting up the API endpoints for the frontend.", time: "10:15 AM", type: "received" },
+                    { author: "Ananya Reddy", avatar: "AR", content: "Great work everyone! I'll update the project documentation with the latest progress.", time: "10:20 AM", type: "received" }
+                ],
+                team2: [
+                    { author: "Arjun Patel", avatar: "AP", content: "Team, let's discuss the next steps for the Sustainable Campus App. I've drafted some UI mockups.", time: "Yesterday", type: "received" },
+                    { author: "Marthanda", avatar: "M", content: "Sounds good, Arjun! I'm ready to dive into the Flutter development.", time: "Yesterday", type: "sent" }
+                ],
+                team3: [
+                    { author: "Ananya Reddy", avatar: "AR", content: "Blockchain team, I've finalized the smart contract architecture. We can start coding.", time: "2 days ago", type: "received" },
+                    { author: "Marthanda", avatar: "M", content: "Excellent, Ananya! I'll set up the development environment.", time: "2 days ago", type: "sent" }
+                ]
+            };
+
+            function loadMessages(teamId) {
+                messagesContainer.innerHTML = '';
+                teamChats[teamId].forEach(msg => {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.classList.add('message', msg.type);
+                    if (msg.type === 'received') {
+                        messageDiv.innerHTML = `
+                            <div class="avatar" style="background: linear-gradient(135deg, ${getAvatarColor(msg.avatar)});">${msg.avatar}</div>
+                            <div class="message-content">
+                                <span class="message-author">${msg.author}</span>
+                                <p>${msg.content}</p>
+                                <span class="message-time">${msg.time}</span>
+                            </div>
+                        `;
+                    } else {
+                        messageDiv.innerHTML = `
+                            <div class="message-content">
+                                <p>${msg.content}</p>
+                                <span class="message-time">${msg.time}</span>
+                            </div>
+                            <div class="avatar" style="background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));">${msg.avatar}</div>
+                        `;
+                    }
+                    messagesContainer.appendChild(messageDiv);
+                });
+                messagesContainer.scrollTop = messagesContainer.scrollHeight; // Scroll to bottom
+            }
+
+            function getAvatarColor(initials) {
+                switch(initials) {
+                    case 'PS': return '#FF6B6B, #4ECDC4';
+                    case 'AP': return '#667eea, #764ba2';
+                    case 'AR': return '#FFD700, #FFA500';
+                    case 'M': return 'var(--accent-primary), var(--accent-secondary)';
+                    default: return '#ccc, #999';
+                }
+            }
+
+            teamItems.forEach(item => {
+                item.addEventListener("click", () => {
+                    teamItems.forEach(i => i.classList.remove("active"));
+                    item.classList.add("active");
+                    const teamId = item.dataset.teamId;
+                    chatTeamName.textContent = item.querySelector('span').textContent; // Update chat header
+                    loadMessages(teamId);
+                });
+            });
+
+            // Load initial chat for the active team
+            loadMessages('team1');
+        });
+    </script>
+</body>
+</html>
+
+

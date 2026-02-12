@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - DevMate</title>
+    <meta name="description" content="Discover and register for hackathons, workshops, and tech events.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="../index.html" class="nav-logo">DevMate</a>
+                <ul class="nav-links">
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="discover.html" class="nav-link">Discover</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="teams.html" class="nav-link">Teams</a></li>
+                    <li><a href="team-chat.html" class="nav-link">Team Chat</a></li>
+                    <li><a href="personal-chat.html" class="nav-link">Personal Chat</a></li>
+                    <li><a href="events.html" class="nav-link active">Events</a></li>
+                    <li><a href="resources.html" class="nav-link">Resources</a></li>
+                    <!-- Notification Bell -->
+                    <li style="position: relative;">
+                        <button class="notification-bell" id="notificationBell" style="background: none; border: none; color: var(--text-primary); font-size: 1.25rem; cursor: pointer; position: relative;">
+                            🔔
+                            <span class="notification-dot" id="notification-dot" style="position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; background: #ef4444; border-radius: 50%; display: block;"></span>
+                        </button>
+                        <div class="notification-dropdown" id="notificationDropdown" style="position: absolute; top: 100%; right: 0; width: 300px; background: var(--bg-secondary); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 1rem; display: none; z-index: 1000; box-shadow: var(--shadow-lg);">
+                            <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.5rem;">Notifications</div>
+                            <div style="color: var(--text-secondary); font-size: 0.875rem; padding: 0.5rem 0; border-bottom: 1px solid var(--glass-border);">
+                                <span>New message from Priya Sharma</span>
+                                <span style="float: right; color: var(--text-muted);">2 min ago</span>
+                            </div>
+                            <div style="color: var(--text-secondary); font-size: 0.875rem; padding: 0.5rem 0;">
+                                <span>Your team "AI Study Assistant" has an update</span>
+                                <span style="float: right; color: var(--text-muted);">5 min ago</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2 class="sidebar-title">Dashboard</h2>
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-item-link">
+                            <span>🏠</span>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="discover.html" class="nav-item-link">
+                            <span>🔍</span>
+                            <span>Discover</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-item-link">
+                            <span>💡</span>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="teams.html" class="nav-item-link">
+                            <span>👥</span>
+                            <span>Teams</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="team-chat.html" class="nav-item-link">
+                            <span>💬</span>
+                            <span>Team Chat</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="personal-chat.html" class="nav-item-link">
+                            <span>📱</span>
+                            <span>Personal Chat</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="events.html" class="nav-item-link">
+                            <span>📅</span>
+                            <span>Events</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="resources.html" class="nav-item-link">
+                            <span>📚</span>
+                            <span>Resources</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="profile.html" class="nav-item-link">
+                            <span>👤</span>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- User Profile Card -->
+            <div class="glass-panel" style="margin-top: auto; padding: 1rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">
+                        M
+                    </div>
+                    <div>
+                        <div style="color: var(--text-primary); font-weight: 600; font-size: 0.875rem;">Marthanda</div>
+                        <div style="color: var(--text-muted); font-size: 0.75rem;">SRM Institute</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1 class="page-title">Events & Hackathons</h1>
+
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label for="event-type" class="filter-label">Type:</label>
+                    <select id="event-type" class="form-select">
+                        <option value="all">All</option>
+                        <option value="hackathon">Hackathon</option>
+                        <option value="workshop">Workshop</option>
+                        <option value="webinar">Webinar</option>
+                        <option value="conference">Conference</option>
+                        <option value="technical">Technical</option>
+                        <option value="non-technical">Non-Technical</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="college-filter" class="filter-label">College:</label>
+                    <select id="college-filter" class="form-select">
+                        <option value="srm">SRM Institute of Science and Technology</option>
+                        <option value="all">All Colleges</option>
+                        <option value="iit-madras">Indian Institute of Technology Madras</option>
+                        <option value="nit-trichy">National Institute of Technology Tiruchirappalli</option>
+                        <option value="anna-university">Anna University</option>
+                        <option value="vit">Vellore Institute of Technology</option>
+                        <option value="sathyabama">Sathyabama Institute of Science and Technology</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="date-filter" class="filter-label">Date:</label>
+                    <input type="date" id="date-filter" class="form-input">
+                </div>
+                <button class="btn btn-primary">Apply Filters</button>
+            </div>
+
+            <section class="events-list">
+                <h2 class="section-title">Upcoming Events</h2>
+                <div class="grid-container">
+                    <!-- SRM Institute Events (Prioritized) -->
+                    <div class="glass-card event-card">
+                        <h3 class="card-title">SRM Hackathon 2025: Code for Change</h3>
+                        <p class="card-subtitle">SRM Institute of Science and Technology</p>
+                        <p class="card-text">Join SRM's annual hackathon to build innovative solutions for social impact. Cash prizes and internship opportunities!</p>
+                        <div class="event-meta">
+                            <span>📅 Oct 26-27, 2025</span>
+                            <span>📍 Main Auditorium, SRM</span>
+                        </div>
+                        <button class="btn btn-primary">Register Now</button>
+                    </div>
+                    <div class="glass-card event-card">
+                        <h3 class="card-title">AI/ML Workshop Series</h3>
+                        <p class="card-subtitle">SRM Institute of Science and Technology</p>
+                        <p class="card-text">Hands-on workshops covering Python, TensorFlow, and practical AI/ML applications. Beginners welcome!</p>
+                        <div class="event-meta">
+                            <span>📅 Nov 1-15, 2025</span>
+                            <span>📍 Online & Campus Labs</span>
+                        </div>
+                        <button class="btn btn-primary">Register Now</button>
+                    </div>
+                    <div class="glass-card event-card">
+                        <h3 class="card-title">TechFest 2025: Innovate & Inspire</h3>
+                        <p class="card-subtitle">SRM Institute of Science and Technology</p>
+                        <p class="card-text">SRM's biggest technical festival featuring coding competitions, robotics, and guest lectures from industry leaders.</p>
+                        <div class="event-meta">
+                            <span>📅 Dec 5-7, 2025</span>
+                            <span>📍 SRM Campus</span>
+                        </div>
+                        <button class="btn btn-primary">Register Now</button>
+                    </div>
+
+                    <!-- Other College Events -->
+                    <div class="glass-card event-card">
+                        <h3 class="card-title">NIT Trichy CodeSprint</h3>
+                        <p class="card-subtitle">National Institute of Technology Tiruchirappalli</p>
+                        <p class="card-text">A 24-hour coding challenge for competitive programmers. Test your skills and win exciting prizes!</p>
+                        <div class="event-meta">
+                            <span>📅 Nov 10-11, 2025</span>
+                            <span>📍 NIT Trichy Campus</span>
+                        </div>
+                        <button class="btn btn-secondary">Learn More</button>
+                    </div>
+                    <div class="glass-card event-card">
+                        <h3 class="card-title">Anna University Robotics Expo</h3>
+                        <p class="card-subtitle">Anna University</p>
+                        <p class="card-text">Showcasing the latest advancements in robotics and automation. Participate in robot wars and design challenges.</p>
+                        <div class="event-meta">
+                            <span>📅 Nov 20-22, 2025</span>
+                            <span>📍 Anna University Grounds</span>
+                        </div>
+                        <button class="btn btn-secondary">Learn More</button>
+                    </div>
+                    <div class="glass-card event-card">
+                        <h3 class="card-title">VIT Hackathon: FutureTech</h3>
+                        <p class="card-subtitle">Vellore Institute of Technology</p>
+                        <p class="card-text">Solve real-world problems using cutting-edge technologies. Open to all college students.</p>
+                        <div class="event-meta">
+                            <span>📅 Dec 1-3, 2025</span>
+                            <span>📍 VIT Campus, Vellore</span>
+                        </div>
+                        <button class="btn btn-secondary">Learn More</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script>
+        function toggleNotifications() {
+            const dot = document.getElementById("notification-dot");
+            dot.style.display = dot.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</body>
+</html>
+
+

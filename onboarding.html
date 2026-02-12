@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join DevMate - Onboarding</title>
+    <meta name="description" content="Join the DevMate community and start collaborating with talented student developers worldwide.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="../index.html" class="nav-logo">DevMate</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html#features" class="nav-link">Features</a></li>
+                    <li><a href="../index.html#about" class="nav-link">About</a></li>
+                    <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <a href="dashboard.html" class="btn btn-secondary">Sign In</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Onboarding Container -->
+    <div style="min-height: 100vh; padding-top: 100px; padding-bottom: 2rem;">
+        <div class="container">
+            <div style="max-width: 600px; margin: 0 auto;">
+                <!-- Progress Indicator -->
+                <div style="margin-bottom: 3rem;">
+                    <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                        <div class="step-indicator active" id="step1">
+                            <span>1</span>
+                        </div>
+                        <div style="width: 60px; height: 2px; background: var(--glass-border); position: relative;">
+                            <div style="width: 0%; height: 100%; background: var(--accent-primary); transition: width 0.3s ease;" id="progress1"></div>
+                        </div>
+                        <div class="step-indicator" id="step2">
+                            <span>2</span>
+                        </div>
+                        <div style="width: 60px; height: 2px; background: var(--glass-border); position: relative;">
+                            <div style="width: 0%; height: 100%; background: var(--accent-primary); transition: width 0.3s ease;" id="progress2"></div>
+                        </div>
+                        <div class="step-indicator" id="step3">
+                            <span>3</span>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <h2 id="stepTitle" style="color: var(--text-primary); margin-bottom: 0.5rem;">Welcome to DevMate!</h2>
+                        <p id="stepDescription" style="color: var(--text-secondary);">Let's get you set up with your developer profile</p>
+                    </div>
+                </div>
+
+                <!-- Step 1: Basic Information -->
+                <div class="glass-panel" id="onboardingStep1">
+                    <h3 style="color: var(--text-primary); margin-bottom: 1.5rem;">Basic Information</h3>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Full Name *</label>
+                        <input type="text" class="form-input" id="fullName" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Email Address *</label>
+                        <input type="email" class="form-input" id="email" placeholder="your.email@college.edu" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">College/University *</label>
+                        <select class="form-select" id="college" required>
+                            <option value="">Select your college</option>
+                            <option value="iit-madras">Indian Institute of Technology Madras (IIT Madras)</option>
+                            <option value="nit-trichy">National Institute of Technology Tiruchirappalli (NIT Trichy)</option>
+                            <option value="anna-university">Anna University</option>
+                            <option value="vit">Vellore Institute of Technology (VIT)</option>
+                            <option value="srm">SRM Institute of Science and Technology</option>
+                            <option value="sathyabama">Sathyabama Institute of Science and Technology</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="otherCollegeGroup" style="display: none;">
+                        <label class="form-label">College Name</label>
+                        <input type="text" class="form-input" id="otherCollege" placeholder="Enter your college name">
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label class="form-label">Year of Study *</label>
+                            <select class="form-select" id="year" required>
+                                <option value="">Select year</option>
+                                <option value="1">1st Year</option>
+                                <option value="2">2nd Year</option>
+                                <option value="3">3rd Year</option>
+                                <option value="4">4th Year</option>
+                                <option value="graduate">Graduate</option>
+                                <option value="postgraduate">Post Graduate</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Course/Department *</label>
+                            <select class="form-select" id="course" required>
+                                <option value="">Select course</option>
+                                <option value="cse">Computer Science Engineering</option>
+                                <option value="it">Information Technology</option>
+                                <option value="ece">Electronics & Communication</option>
+                                <option value="eee">Electrical & Electronics</option>
+                                <option value="mech">Mechanical Engineering</option>
+                                <option value="civil">Civil Engineering</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">LinkedIn Profile</label>
+                        <input type="url" class="form-input" id="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                        <div style="color: var(--text-muted); font-size: 0.875rem; margin-top: 0.25rem;">
+                            Optional: Add your LinkedIn profile to showcase your professional network
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">GitHub Profile</label>
+                        <input type="url" class="form-input" id="github" placeholder="https://github.com/yourusername">
+                        <div style="color: var(--text-muted); font-size: 0.875rem; margin-top: 0.25rem;">
+                            Optional: Add your GitHub profile to showcase your coding projects
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: flex-end; margin-top: 2rem;">
+                        <button class="btn btn-primary" onclick="nextStep(1)">Continue</button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Skills Selection -->
+                <div class="glass-panel hidden" id="onboardingStep2">
+                    <h3 style="color: var(--text-primary); margin-bottom: 1.5rem;">Your Skills & Expertise</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                        Select the technologies and skills you're proficient in. This helps us match you with relevant projects and teammates.
+                    </p>
+
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: var(--text-primary); margin-bottom: 1rem;">Programming Languages</h4>
+                        <div class="skills-grid">
+                            <div class="skill-chip" data-skill="javascript">JavaScript</div>
+                            <div class="skill-chip" data-skill="python">Python</div>
+                            <div class="skill-chip" data-skill="java">Java</div>
+                            <div class="skill-chip" data-skill="cpp">C++</div>
+                            <div class="skill-chip" data-skill="c">C</div>
+                            <div class="skill-chip" data-skill="typescript">TypeScript</div>
+                            <div class="skill-chip" data-skill="dart">Dart</div>
+                            <div class="skill-chip" data-skill="kotlin">Kotlin</div>
+                            <div class="skill-chip" data-skill="swift">Swift</div>
+                            <div class="skill-chip" data-skill="go">Go</div>
+                            <div class="skill-chip" data-skill="rust">Rust</div>
+                            <div class="skill-chip" data-skill="php">PHP</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: var(--text-primary); margin-bottom: 1rem;">Frontend Technologies</h4>
+                        <div class="skills-grid">
+                            <div class="skill-chip" data-skill="react">React</div>
+                            <div class="skill-chip" data-skill="vue">Vue.js</div>
+                            <div class="skill-chip" data-skill="angular">Angular</div>
+                            <div class="skill-chip" data-skill="html">HTML/CSS</div>
+                            <div class="skill-chip" data-skill="sass">Sass/SCSS</div>
+                            <div class="skill-chip" data-skill="tailwind">Tailwind CSS</div>
+                            <div class="skill-chip" data-skill="bootstrap">Bootstrap</div>
+                            <div class="skill-chip" data-skill="jquery">jQuery</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: var(--text-primary); margin-bottom: 1rem;">Backend & Databases</h4>
+                        <div class="skills-grid">
+                            <div class="skill-chip" data-skill="nodejs">Node.js</div>
+                            <div class="skill-chip" data-skill="express">Express.js</div>
+                            <div class="skill-chip" data-skill="django">Django</div>
+                            <div class="skill-chip" data-skill="flask">Flask</div>
+                            <div class="skill-chip" data-skill="spring">Spring Boot</div>
+                            <div class="skill-chip" data-skill="mongodb">MongoDB</div>
+                            <div class="skill-chip" data-skill="postgresql">PostgreSQL</div>
+                            <div class="skill-chip" data-skill="mysql">MySQL</div>
+                            <div class="skill-chip" data-skill="redis">Redis</div>
+                            <div class="skill-chip" data-skill="firebase">Firebase</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: var(--text-primary); margin-bottom: 1rem;">Mobile & Specialized</h4>
+                        <div class="skills-grid">
+                            <div class="skill-chip" data-skill="flutter">Flutter</div>
+                            <div class="skill-chip" data-skill="react-native">React Native</div>
+                            <div class="skill-chip" data-skill="android">Android</div>
+                            <div class="skill-chip" data-skill="ios">iOS</div>
+                            <div class="skill-chip" data-skill="ml">Machine Learning</div>
+                            <div class="skill-chip" data-skill="ai">Artificial Intelligence</div>
+                            <div class="skill-chip" data-skill="blockchain">Blockchain</div>
+                            <div class="skill-chip" data-skill="devops">DevOps</div>
+                            <div class="skill-chip" data-skill="uiux">UI/UX Design</div>
+                            <div class="skill-chip" data-skill="cloud">Cloud Computing</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+                        <button class="btn btn-secondary" onclick="prevStep(2)">Back</button>
+                        <button class="btn btn-primary" onclick="nextStep(2)">Continue</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Interests & Goals -->
+                <div class="glass-panel hidden" id="onboardingStep3">
+                    <h3 style="color: var(--text-primary); margin-bottom: 1.5rem;">Your Interests & Goals</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                        Tell us what you're passionate about and what you want to achieve on DevMate.
+                    </p>
+
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: var(--text-primary); margin-bottom: 1rem;">What are you interested in?</h4>
+                        <div class="interests-grid">
+                            <div class="interest-card" data-interest="hackathons">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏆</div>
+                                <h5>Hackathons</h5>
+                                <p>Participate in coding competitions and build innovative solutions</p>
+                            </div>
+                            <div class="interest-card" data-interest="research">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔬</div>
+                                <h5>Research Projects</h5>
+                                <p>Contribute to academic research and publish papers</p>
+                            </div>
+                            <div class="interest-card" data-interest="startup">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🚀</div>
+                                <h5>Startup Ideas</h5>
+                                <p>Build the next big thing and create innovative products</p>
+                            </div>
+                            <div class="interest-card" data-interest="learning">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">📚</div>
+                                <h5>Learning Projects</h5>
+                                <p>Collaborate on projects to learn new technologies and skills</p>
+                            </div>
+                            <div class="interest-card" data-interest="opensource">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌐</div>
+                                <h5>Open Source</h5>
+                                <p>Contribute to open source projects and help the community</p>
+                            </div>
+                            <div class="interest-card" data-interest="freelance">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">💼</div>
+                                <h5>Freelance Work</h5>
+                                <p>Take on client projects and build professional experience</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: var(--text-primary); margin-bottom: 1rem;">Tell us about yourself</h4>
+                        <textarea class="form-textarea" id="bio" rows="4" placeholder="Write a brief bio about yourself, your interests, and what you're looking to achieve on DevMate..."></textarea>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+                        <button class="btn btn-secondary" onclick="prevStep(3)">Back</button>
+                        <button class="btn btn-primary" onclick="completeOnboarding()">Complete Setup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script>
+        let currentStep = 1;
+        let selectedSkills = [];
+        let selectedInterests = [];
+
+        // Step navigation
+        function nextStep(step) {
+            if (validateStep(step)) {
+                currentStep++;
+                updateStepDisplay();
+            }
+        }
+
+        function prevStep(step) {
+            currentStep--;
+            updateStepDisplay();
+        }
+
+        function updateStepDisplay() {
+            // Hide all steps
+            document.querySelectorAll('[id^="onboardingStep"]').forEach(step => {
+                step.classList.add('hidden');
+            });
+
+            // Show current step
+            document.getElementById(`onboardingStep${currentStep}`).classList.remove('hidden');
+
+            // Update step indicators
+            document.querySelectorAll('.step-indicator').forEach((indicator, index) => {
+                indicator.classList.remove('active', 'completed');
+                if (index + 1 < currentStep) {
+                    indicator.classList.add('completed');
+                } else if (index + 1 === currentStep) {
+                    indicator.classList.add('active');
+                }
+            });
+
+            // Update progress bars
+            document.getElementById('progress1').style.width = currentStep > 1 ? '100%' : '0%';
+            document.getElementById('progress2').style.width = currentStep > 2 ? '100%' : '0%';
+
+            // Update titles
+            const titles = {
+                1: { title: 'Welcome to DevMate!', desc: "Let's get you set up with your developer profile" },
+                2: { title: 'Your Skills & Expertise', desc: 'Help us understand your technical background' },
+                3: { title: 'Your Interests & Goals', desc: 'Tell us what you want to achieve on DevMate' }
+            };
+
+            document.getElementById('stepTitle').textContent = titles[currentStep].title;
+            document.getElementById('stepDescription').textContent = titles[currentStep].desc;
+        }
+
+        function validateStep(step) {
+            if (step === 1) {
+                const required = ['fullName', 'email', 'college', 'year', 'course'];
+                for (let field of required) {
+                    const element = document.getElementById(field);
+                    if (!element.value.trim()) {
+                        element.focus();
+                        alert(`Please fill in the ${field.replace(/([A-Z])/g, ' $1').toLowerCase()} field.`);
+                        return false;
+                    }
+                }
+            } else if (step === 2) {
+                if (selectedSkills.length === 0) {
+                    alert('Please select at least one skill.');
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Skills selection
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('skill-chip')) {
+                e.target.classList.toggle('selected');
+                const skill = e.target.dataset.skill;
+                
+                if (e.target.classList.contains('selected')) {
+                    selectedSkills.push(skill);
+                } else {
+                    selectedSkills = selectedSkills.filter(s => s !== skill);
+                }
+            }
+
+            if (e.target.classList.contains('interest-card') || e.target.closest('.interest-card')) {
+                const card = e.target.classList.contains('interest-card') ? e.target : e.target.closest('.interest-card');
+                card.classList.toggle('selected');
+                const interest = card.dataset.interest;
+                
+                if (card.classList.contains('selected')) {
+                    selectedInterests.push(interest);
+                } else {
+                    selectedInterests = selectedInterests.filter(i => i !== interest);
+                }
+            }
+        });
+
+        // College selection handler
+        document.getElementById('college').addEventListener('change', function() {
+            const otherGroup = document.getElementById('otherCollegeGroup');
+            if (this.value === 'other') {
+                otherGroup.style.display = 'block';
+            } else {
+                otherGroup.style.display = 'none';
+            }
+        });
+
+        function completeOnboarding() {
+            if (validateStep(3)) {
+                // Collect all form data
+                const formData = {
+                    fullName: document.getElementById('fullName').value,
+                    email: document.getElementById('email').value,
+                    college: document.getElementById('college').value,
+                    otherCollege: document.getElementById('otherCollege').value,
+                    year: document.getElementById('year').value,
+                    course: document.getElementById('course').value,
+                    linkedin: document.getElementById('linkedin').value,
+                    github: document.getElementById('github').value,
+                    skills: selectedSkills,
+                    interests: selectedInterests,
+                    bio: document.getElementById('bio').value
+                };
+
+                // In a real app, this would be sent to the server
+                console.log('Onboarding data:', formData);
+                
+                // Simulate successful registration
+                alert('Welcome to DevMate! Your profile has been created successfully.');
+                window.location.href = 'dashboard.html';
+            }
+        }
+    </script>
+
+    <style>
+        .step-indicator {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            border: 2px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .step-indicator.active {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: white;
+        }
+
+        .step-indicator.completed {
+            background: var(--accent-secondary);
+            border-color: var(--accent-secondary);
+            color: var(--bg-primary);
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-chip {
+            padding: 0.5rem 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .skill-chip:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .skill-chip.selected {
+            background: rgba(0, 192, 255, 0.15);
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .interest-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .interest-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        .interest-card.selected {
+            background: rgba(0, 192, 255, 0.1);
+            border-color: var(--accent-primary);
+        }
+
+        .interest-card h5 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .interest-card p {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin: 0;
+        }
+    </style>
+</body>
+</html>
+

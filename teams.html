@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams - DevMate</title>
+    <meta name="description" content="Manage your active and completed projects, and collaborate with your teams.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="../index.html" class="nav-logo">DevMate</a>
+                <ul class="nav-links">
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="discover.html" class="nav-link">Discover</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="teams.html" class="nav-link active">Teams</a></li>
+                    <li><a href="team-chat.html" class="nav-link">Team Chat</a></li>
+                    <li><a href="personal-chat.html" class="nav-link">Personal Chat</a></li>
+                    <li><a href="events.html" class="nav-link">Events</a></li>
+                    <li><a href="resources.html" class="nav-link">Resources</a></li>
+                    <!-- Notification Bell -->
+                    <li style="position: relative;">
+                        <button class="notification-bell" id="notificationBell" style="background: none; border: none; color: var(--text-primary); font-size: 1.25rem; cursor: pointer; position: relative;">
+                            🔔
+                            <span class="notification-dot" id="notification-dot" style="position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; background: #ef4444; border-radius: 50%; display: block;"></span>
+                        </button>
+                        <div class="notification-dropdown" id="notificationDropdown" style="position: absolute; top: 100%; right: 0; width: 300px; background: var(--bg-secondary); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 1rem; display: none; z-index: 1000; box-shadow: var(--shadow-lg);">
+                            <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.5rem;">Notifications</div>
+                            <div style="color: var(--text-secondary); font-size: 0.875rem; padding: 0.5rem 0; border-bottom: 1px solid var(--glass-border);">
+                                <span>New message from Priya Sharma</span>
+                                <span style="float: right; color: var(--text-muted);">2 min ago</span>
+                            </div>
+                            <div style="color: var(--text-secondary); font-size: 0.875rem; padding: 0.5rem 0;">
+                                <span>Your team "AI Study Assistant" has an update</span>
+                                <span style="float: right; color: var(--text-muted);">5 min ago</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2 class="sidebar-title">Dashboard</h2>
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-item-link">
+                            <span>🏠</span>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="discover.html" class="nav-item-link">
+                            <span>🔍</span>
+                            <span>Discover</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-item-link">
+                            <span>💡</span>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="teams.html" class="nav-item-link">
+                            <span>👥</span>
+                            <span>Teams</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="team-chat.html" class="nav-item-link">
+                            <span>💬</span>
+                            <span>Team Chat</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="personal-chat.html" class="nav-item-link">
+                            <span>📱</span>
+                            <span>Personal Chat</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="events.html" class="nav-item-link">
+                            <span>📅</span>
+                            <span>Events</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="resources.html" class="nav-item-link">
+                            <span>📚</span>
+                            <span>Resources</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="profile.html" class="nav-item-link">
+                            <span>👤</span>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- User Profile Card -->
+            <div class="glass-panel" style="margin-top: auto; padding: 1rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">
+                        M
+                    </div>
+                    <div>
+                        <div style="color: var(--text-primary); font-weight: 600; font-size: 0.875rem;">Marthanda</div>
+                        <div style="color: var(--text-muted); font-size: 0.75rem;">SRM Institute</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <div>
+                    <h1 style="color: var(--text-primary);">Your Teams</h1>
+                    <p>Manage your active projects and collaborate with your teammates.</p>
+                </div>
+                <button class="btn btn-primary">+ Create New Team</button>
+            </div>
+
+            <!-- Teams List -->
+            <section style="margin-bottom: 2rem;">
+                <h2 style="color: var(--text-primary); margin-bottom: 1rem;">Active Projects</h2>
+                <div class="teams-list-container" style="max-height: 400px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--accent-primary) var(--bg-secondary);">
+                    <div class="glass-panel team-item" style="margin-bottom: 1rem; padding: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h3 style="color: var(--text-primary); font-size: 1.125rem; font-weight: 700;">AI-Powered Study Assistant</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem;">Team Lead: Priya Sharma</p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
+                                <span class="skill-tag">Machine Learning</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">TensorFlow</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div class="team-members-avatars">
+                                <div class="avatar" style="background: linear-gradient(135deg, #FF6B6B, #4ECDC4);">PS</div>
+                                <div class="avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);">AP</div>
+                                <div class="avatar" style="background: linear-gradient(135deg, #FFD700, #FFA500);">AR</div>
+                            </div>
+                            <button class="btn btn-secondary">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel team-item" style="margin-bottom: 1rem; padding: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h3 style="color: var(--text-primary); font-size: 1.125rem; font-weight: 700;">Sustainable Campus App</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem;">Team Lead: Arjun Patel</p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
+                                <span class="skill-tag">Flutter</span>
+                                <span class="skill-tag">Firebase</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div class="team-members-avatars">
+                                <div class="avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);">AP</div>
+                                <div class="avatar" style="background: linear-gradient(135deg, #FFD700, #FFA500);">AR</div>
+                            </div>
+                            <button class="btn btn-secondary">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel team-item" style="margin-bottom: 1rem; padding: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h3 style="color: var(--text-primary); font-size: 1.125rem; font-weight: 700;">Blockchain Voting System</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem;">Team Lead: Ananya Reddy</p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
+                                <span class="skill-tag">Blockchain</span>
+                                <span class="skill-tag">Solidity</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div class="team-members-avatars">
+                                <div class="avatar" style="background: linear-gradient(135deg, #FFD700, #FFA500);">AR</div>
+                                <div class="avatar" style="background: linear-gradient(135deg, #FF6B6B, #4ECDC4);">PS</div>
+                            </div>
+                            <button class="btn btn-secondary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Completed Projects -->
+            <section>
+                <h2 style="color: var(--text-primary); margin-bottom: 1rem;">Completed Projects</h2>
+                <div class="teams-list-container" style="max-height: 300px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--accent-primary) var(--bg-secondary);">
+                    <div class="glass-panel team-item" style="margin-bottom: 1rem; padding: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h3 style="color: var(--text-primary); font-size: 1.125rem; font-weight: 700;">Automated Code Review Tool</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem;">Team Lead: Rohit Kumar</p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
+                                <span class="skill-tag">Static Analysis</span>
+                                <span class="skill-tag">Python</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div class="team-members-avatars">
+                                <div class="avatar" style="background: linear-gradient(135deg, #4ECDC4, #C7F0BD);">RK</div>
+                                <div class="avatar" style="background: linear-gradient(135deg, #FF6B6B, #4ECDC4);">PS</div>
+                            </div>
+                            <button class="btn btn-secondary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Teams Page Notifications (Bell Icon in Header) -->
+            <section style="margin-top: 2rem;">
+                <h2 style="color: var(--text-primary); margin-bottom: 1rem;">Team Notifications</h2>
+                <div class="glass-panel" style="padding: 1.5rem;">
+                    <div class="notification-item">
+                        <div class="notification-icon">🔔</div>
+                        <div class="notification-content">
+                            <p><strong>Team Update:</strong> New task assigned for 'AI-Powered Study Assistant'.</p>
+                            <span class="notification-time">10 minutes ago</span>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notification-icon">✉️</div>
+                        <div class="notification-content">
+                            <p><strong>New Message:</strong> Arjun Patel sent a message in 'Sustainable Campus App' team chat.</p>
+                            <span class="notification-time">30 minutes ago</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script>
+        function toggleNotifications() {
+            const dot = document.getElementById("notification-dot");
+            dot.style.display = dot.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</body>
+</html>
+
+

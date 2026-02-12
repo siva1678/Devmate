@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - DevMate</title>
+    <meta name="description" content="Explore all projects on DevMate. Find open projects, join teams, or showcase your own work.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="../index.html" class="nav-logo">DevMate</a>
+                <ul class="nav-links">
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="discover.html" class="nav-link">Discover</a></li>
+                    <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                    <li><a href="teams.html" class="nav-link">Teams</a></li>
+                    <li><a href="team-chat.html" class="nav-link">Team Chat</a></li>
+                    <li><a href="personal-chat.html" class="nav-link">Personal Chat</a></li>
+                    <li><a href="events.html" class="nav-link">Events</a></li>
+                    <li><a href="resources.html" class="nav-link">Resources</a></li>
+                    <!-- Notification Bell -->
+                    <li style="position: relative;">
+                        <button class="notification-bell" id="notificationBell" style="background: none; border: none; color: var(--text-primary); font-size: 1.25rem; cursor: pointer; position: relative;">
+                            🔔
+                            <span class="notification-dot" id="notification-dot" style="position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; background: #ef4444; border-radius: 50%; display: block;"></span>
+                        </button>
+                        <div class="notification-dropdown" id="notificationDropdown" style="position: absolute; top: 100%; right: 0; width: 300px; background: var(--bg-secondary); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 1rem; display: none; z-index: 1000; box-shadow: var(--shadow-lg);">
+                            <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.5rem;">Notifications</div>
+                            <div style="color: var(--text-secondary); font-size: 0.875rem; padding: 0.5rem 0; border-bottom: 1px solid var(--glass-border);">
+                                <span>New message from Priya Sharma</span>
+                                <span style="float: right; color: var(--text-muted);">2 min ago</span>
+                            </div>
+                            <div style="color: var(--text-secondary); font-size: 0.875rem; padding: 0.5rem 0;">
+                                <span>Your team "AI Study Assistant" has an update</span>
+                                <span style="float: right; color: var(--text-muted);">5 min ago</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content-full">
+        <div class="container">
+            <!-- Page Header -->
+            <section class="page-header">
+                <h1 class="page-title">All Projects</h1>
+                <p class="page-subtitle">Discover exciting projects and find your perfect team</p>
+            </section>
+
+            <!-- Filters Section -->
+            <section class="filters-section">
+                <div class="filters-container">
+                    <div class="search-filter">
+                        <input type="text" class="search-input" placeholder="Search projects by title, skills, or description..." id="searchInput">
+                    </div>
+                    <div class="filter-group">
+                        <div class="filter-item">
+                            <label class="filter-label">Status</label>
+                            <select class="filter-select" id="statusFilter">
+                                <option value="">All Projects</option>
+                                <option value="open">Open for Members</option>
+                                <option value="progress">In Progress</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                        </div>
+                        <div class="filter-item">
+                            <label class="filter-label">Technology</label>
+                            <select class="filter-select" id="techFilter">
+                                <option value="">All Technologies</option>
+                                <option value="ml">Machine Learning</option>
+                                <option value="web">Web Development</option>
+                                <option value="mobile">Mobile Development</option>
+                                <option value="blockchain">Blockchain</option>
+                                <option value="uiux">UI/UX Design</option>
+                                <option value="data">Data Science</option>
+                            </select>
+                        </div>
+                        <div class="filter-item">
+                            <label class="filter-label">Team Size</label>
+                            <select class="filter-select" id="sizeFilter">
+                                <option value="">Any Size</option>
+                                <option value="small">Small (2-3 members)</option>
+                                <option value="medium">Medium (4-6 members)</option>
+                                <option value="large">Large (7+ members)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Grid -->
+            <section class="projects-grid-section">
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Project Card 1 -->
+                    <div class="project-card-grid">
+                        <div class="project-header">
+                            <h3 class="project-title">AI-Powered Study Assistant</h3>
+                            <span class="project-status status-open">Open</span>
+                        </div>
+                        <p class="project-description">Develop an intelligent system to analyze student learning patterns and suggest personalized study paths using machine learning algorithms. The system will integrate with existing educational resources and provide real-time feedback.</p>
+                        <div class="project-skills">
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">Flask</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-members">👥 Need 2 more members</span>
+                            <span class="project-status-text">Open</span>
+                        </div>
+                        <button class="btn btn-primary project-btn" onclick="openProjectModal('ai-study-assistant')">View Project</button>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="project-card-grid">
+                        <div class="project-header">
+                            <h3 class="project-title">Sustainable Campus App</h3>
+                            <span class="project-status status-open">Open</span>
+                        </div>
+                        <p class="project-description">Create a comprehensive mobile application to promote eco-friendly practices and resource management on campus. Features include carbon footprint tracking, waste management optimization, and green event organization.</p>
+                        <div class="project-skills">
+                            <span class="skill-tag">React Native</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">UI/UX Design</span>
+                            <span class="skill-tag">Firebase</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-members">👥 Need 3 more members</span>
+                            <span class="project-status-text">Open</span>
+                        </div>
+                        <button class="btn btn-primary project-btn" onclick="openProjectModal('sustainable-campus')">View Project</button>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="project-card-grid">
+                        <div class="project-header">
+                            <h3 class="project-title">Blockchain Voting System</h3>
+                            <span class="project-status status-progress">In Progress</span>
+                        </div>
+                        <p class="project-description">Build a secure and transparent voting system using blockchain technology to ensure integrity and prevent fraud. The system features smart contract-based vote recording and real-time result verification.</p>
+                        <div class="project-skills">
+                            <span class="skill-tag">Blockchain</span>
+                            <span class="skill-tag">Solidity</span>
+                            <span class="skill-tag">Web3.js</span>
+                            <span class="skill-tag">React</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-members">👥 Team Complete</span>
+                            <span class="project-status-text">In Progress</span>
+                        </div>
+                        <button class="btn btn-primary project-btn" onclick="openProjectModal('blockchain-voting')">View Project</button>
+                    </div>
+
+                    <!-- Project Card 4 -->
+                    <div class="project-card-grid">
+                        <div class="project-header">
+                            <h3 class="project-title">Smart Home Automation</h3>
+                            <span class="project-status status-open">Open</span>
+                        </div>
+                        <p class="project-description">Build an intelligent home automation system that integrates IoT sensors, machine learning algorithms, and user-friendly interfaces to create a seamless smart living experience with energy optimization.</p>
+                        <div class="project-skills">
+                            <span class="skill-tag">IoT</span>
+                            <span class="skill-tag">Arduino</span>
+                            <span class="skill-tag">Mobile Development</span>
+                            <span class="skill-tag">Machine Learning</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-members">👥 Need 1 more member</span>
+                            <span class="project-status-text">Open</span>
+                        </div>
+                        <button class="btn btn-primary project-btn" onclick="openProjectModal('smart-home')">View Project</button>
+                    </div>
+
+                    <!-- Project Card 5 -->
+                    <div class="project-card-grid">
+                        <div class="project-header">
+                            <h3 class="project-title">Personal Finance Tracker</h3>
+                            <span class="project-status status-open">Open</span>
+                        </div>
+                        <p class="project-description">Develop a comprehensive web application to help students track their expenses, manage budgets, and gain insights into their spending patterns through interactive data visualizations and smart recommendations.</p>
+                        <div class="project-skills">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">D3.js</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">MongoDB</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-members">👥 Need 2 more members</span>
+                            <span class="project-status-text">Open</span>
+                        </div>
+                        <button class="btn btn-primary project-btn" onclick="openProjectModal('personal-finance')">View Project</button>
+                    </div>
+
+                    <!-- Project Card 6 -->
+                    <div class="project-card-grid">
+                        <div class="project-header">
+                            <h3 class="project-title">Gesture Control Interface</h3>
+                            <span class="project-status status-completed">Completed</span>
+                        </div>
+                        <p class="project-description">Create an innovative interface that allows users to control devices using hand gestures captured by a camera. Successfully implemented real-time gesture recognition with high accuracy and low latency.</p>
+                        <div class="project-skills">
+                            <span class="skill-tag">Computer Vision</span>
+                            <span class="skill-tag">OpenCV</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">TensorFlow</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-members">👥 3 members</span>
+                            <span class="project-status-text">Completed</span>
+                        </div>
+                        <button class="btn btn-primary project-btn" onclick="openProjectModal('gesture-control')">View Project</button>
+                    </div>
+
+                    <!-- Project Card 7 -->
+                    <div class="project-card-grid">
+                        <div class="project-header">
+                            <h3 class="project-title">Educational VR Game</h3>
+                            <span class="project-status status-open">Open</span>
+                        </div>
+                        <p class="project-description">Develop an immersive virtual reality educational game that makes learning interactive and engaging. The game will cover various subjects through gamified experiences and adaptive learning mechanisms.</p>
+                        <div class="project-skills">
+                            <span class="skill-tag">Unity</span>
+                            <span class="skill-tag">C#</span>
+                            <span class="skill-tag">VR Development</span>
+                            <span class="skill-tag">3D Modeling</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-members">👥 Need 4 more members</span>
+                            <span class="project-status-text">Open</span>
+                        </div>
+                        <button class="btn btn-primary project-btn" onclick="openProjectModal('vr-education')">View Project</button>
+                    </div>
+
+                    <!-- Project Card 8 -->
+                    <div class="project-card-grid">
+                        <div class="project-header">
+                            <h3 class="project-title">Climate Data Analysis Platform</h3>
+                            <span class="project-status status-progress">In Progress</span>
+                        </div>
+                        <p class="project-description">Build a comprehensive platform for analyzing climate data using advanced machine learning techniques. The platform will provide insights into climate patterns and help predict environmental changes.</p>
+                        <div class="project-skills">
+                            <span class="skill-tag">Data Science</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">Visualization</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-members">👥 Team Complete</span>
+                            <span class="project-status-text">In Progress</span>
+                        </div>
+                        <button class="btn btn-primary project-btn" onclick="openProjectModal('climate-analysis')">View Project</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Project Modal -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeProjectModal()">×</button>
+            <div class="modal-body" id="projectModalBody">
+                <!-- Project details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script>
+        // Notification dropdown functionality
+        const notificationBell = document.getElementById('notificationBell');
+        const notificationDropdown = document.getElementById('notificationDropdown');
+        
+        notificationBell.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isVisible = notificationDropdown.style.display === 'block';
+            notificationDropdown.style.display = isVisible ? 'none' : 'block';
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!notificationBell.contains(e.target) && !notificationDropdown.contains(e.target)) {
+                notificationDropdown.style.display = 'none';
+            }
+        });
+
+        // Project modal functionality
+        function openProjectModal(projectId) {
+            const modal = document.getElementById('projectModal');
+            const modalBody = document.getElementById('projectModalBody');
+            
+            // Sample project data
+            const projects = {
+                'ai-study-assistant': {
+                    title: 'AI-Powered Study Assistant',
+                    description: 'Develop an intelligent system to analyze student learning patterns and suggest personalized study paths using machine learning algorithms. The system will integrate with existing educational resources and provide real-time feedback.',
+                    skills: ['Machine Learning', 'Python', 'TensorFlow', 'Flask'],
+                    members: 3,
+                    status: 'Open for Members'
+                },
+                'sustainable-campus': {
+                    title: 'Sustainable Campus App',
+                    description: 'Create a comprehensive mobile application to promote eco-friendly practices and resource management on campus. Features include carbon footprint tracking, waste management optimization, and green event organization.',
+                    skills: ['React Native', 'Node.js', 'UI/UX Design', 'Firebase'],
+                    members: 4,
+                    status: 'Open for Members'
+                }
+            };
+            
+            const project = projects[projectId] || projects['ai-study-assistant'];
+            
+            modalBody.innerHTML = `
+                <h2 class="modal-title">${project.title}</h2>
+                <p class="modal-description">${project.description}</p>
+                <div class="modal-skills">
+                    <h3>Required Skills:</h3>
+                    <div class="skill-tags">
+                        ${project.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                    </div>
+                </div>
+                <div class="modal-meta">
+                    <p><strong>Team Members:</strong> ${project.members}</p>
+                    <p><strong>Status:</strong> ${project.status}</p>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-primary">Join Project</button>
+                    <button class="btn btn-secondary">Contact Team</button>
+                </div>
+            `;
+            
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('projectModal').addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal-overlay')) {
+                closeProjectModal();
+            }
+        });
+
+        // Filter functionality
+        const searchInput = document.getElementById('searchInput');
+        const statusFilter = document.getElementById('statusFilter');
+        const techFilter = document.getElementById('techFilter');
+        const sizeFilter = document.getElementById('sizeFilter');
+
+        function filterProjects() {
+            // Add filter logic here
+            console.log('Filtering projects...');
+        }
+
+        searchInput.addEventListener('input', filterProjects);
+        statusFilter.addEventListener('change', filterProjects);
+        techFilter.addEventListener('change', filterProjects);
+        sizeFilter.addEventListener('change', filterProjects);
+    </script>
+</body>
+</html>
+

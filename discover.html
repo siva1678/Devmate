@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover People - DevMate</title>
+    <meta name="description" content="Discover talented developers from your college and beyond. Connect with like-minded students for your next project.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="../index.html" class="nav-logo">DevMate</a>
+                <ul class="nav-links">
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="discover.html" class="nav-link active">Discover</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="teams.html" class="nav-link">Teams</a></li>
+                    <li><a href="team-chat.html" class="nav-link">Team Chat</a></li>
+                    <li><a href="personal-chat.html" class="nav-link">Personal Chat</a></li>
+                    <li><a href="events.html" class="nav-link">Events</a></li>
+                    <li><a href="resources.html" class="nav-link">Resources</a></li>
+                    <!-- Notification Bell -->
+                    <li style="position: relative;">
+                        <button class="notification-bell" id="notificationBell" style="background: none; border: none; color: var(--text-primary); font-size: 1.25rem; cursor: pointer; position: relative;">
+                            🔔
+                            <span class="notification-dot" id="notification-dot" style="position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; background: #ef4444; border-radius: 50%; display: block;"></span>
+                        </button>
+                        <div class="notification-dropdown" id="notificationDropdown" style="position: absolute; top: 100%; right: 0; width: 300px; background: var(--bg-secondary); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 1rem; display: none; z-index: 1000; box-shadow: var(--shadow-lg);">
+                            <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.5rem;">Notifications</div>
+                            <div style="color: var(--text-secondary); font-size: 0.875rem; padding: 0.5rem 0; border-bottom: 1px solid var(--glass-border);">
+                                <span>New message from Priya Sharma</span>
+                                <span style="float: right; color: var(--text-muted);">2 min ago</span>
+                            </div>
+                            <div style="color: var(--text-secondary); font-size: 0.875rem; padding: 0.5rem 0;">
+                                <span>Your team "AI Study Assistant" has an update</span>
+                                <span style="float: right; color: var(--text-muted);">5 min ago</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content-full">
+        <div class="container">
+            <!-- Page Header -->
+            <section class="page-header">
+                <h1 class="page-title">Discover People</h1>
+                <p class="page-subtitle">Find talented developers and connect with like-minded students for your projects</p>
+            </section>
+
+            <!-- Filters Section -->
+            <section class="filters-section">
+                <div class="filters-container">
+                    <div class="search-filter">
+                        <input type="text" class="search-input" placeholder="Search by name, college, or skills..." id="searchInput">
+                    </div>
+                    <div class="filter-group">
+                        <div class="filter-item">
+                            <label class="filter-label">College</label>
+                            <select class="filter-select" id="collegeFilter">
+                                <option value="">All Colleges</option>
+                                <option value="srm">SRM Institute</option>
+                                <option value="iit">IIT Madras</option>
+                                <option value="nit">NIT Trichy</option>
+                                <option value="anna">Anna University</option>
+                                <option value="vit">VIT</option>
+                            </select>
+                        </div>
+                        <div class="filter-item">
+                            <label class="filter-label">Skills</label>
+                            <select class="filter-select" id="skillsFilter">
+                                <option value="">All Skills</option>
+                                <option value="ml">Machine Learning</option>
+                                <option value="web">Web Development</option>
+                                <option value="mobile">Mobile Development</option>
+                                <option value="uiux">UI/UX Design</option>
+                                <option value="blockchain">Blockchain</option>
+                                <option value="data">Data Science</option>
+                            </select>
+                        </div>
+                        <div class="filter-item">
+                            <label class="filter-label">Year</label>
+                            <select class="filter-select" id="yearFilter">
+                                <option value="">All Years</option>
+                                <option value="1">1st Year</option>
+                                <option value="2">2nd Year</option>
+                                <option value="3">3rd Year</option>
+                                <option value="4">4th Year</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- People Grid -->
+            <section class="people-grid-section">
+                <div class="people-grid" id="peopleGrid">
+                    <!-- Person Card 1 -->
+                    <div class="person-card">
+                        <div class="person-avatar">P</div>
+                        <div class="person-info">
+                            <h3 class="person-name">Priya Sharma</h3>
+                            <p class="person-college">SRM Institute of Science and Technology</p>
+                            <div class="person-skills">
+                                <span class="skill-tag">Machine Learning</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">TensorFlow</span>
+                            </div>
+                        </div>
+                        <div class="person-actions">
+                            <button class="btn btn-primary btn-sm" onclick="openProfileModal('priya')">View Profile</button>
+                            <button class="btn btn-secondary btn-sm" onclick="openChat('priya')">Message</button>
+                        </div>
+                    </div>
+
+                    <!-- Person Card 2 -->
+                    <div class="person-card">
+                        <div class="person-avatar">A</div>
+                        <div class="person-info">
+                            <h3 class="person-name">Arjun Patel</h3>
+                            <p class="person-college">IIT Madras</p>
+                            <div class="person-skills">
+                                <span class="skill-tag">Blockchain</span>
+                                <span class="skill-tag">Solidity</span>
+                                <span class="skill-tag">Web3</span>
+                            </div>
+                        </div>
+                        <div class="person-actions">
+                            <button class="btn btn-primary btn-sm" onclick="openProfileModal('arjun')">View Profile</button>
+                            <button class="btn btn-secondary btn-sm" onclick="openChat('arjun')">Message</button>
+                        </div>
+                    </div>
+
+                    <!-- Person Card 3 -->
+                    <div class="person-card">
+                        <div class="person-avatar">K</div>
+                        <div class="person-info">
+                            <h3 class="person-name">Kavya Nair</h3>
+                            <p class="person-college">NIT Trichy</p>
+                            <div class="person-skills">
+                                <span class="skill-tag">UI/UX Design</span>
+                                <span class="skill-tag">Figma</span>
+                                <span class="skill-tag">React</span>
+                            </div>
+                        </div>
+                        <div class="person-actions">
+                            <button class="btn btn-primary btn-sm" onclick="openProfileModal('kavya')">View Profile</button>
+                            <button class="btn btn-secondary btn-sm" onclick="openChat('kavya')">Message</button>
+                        </div>
+                    </div>
+
+                    <!-- Person Card 4 -->
+                    <div class="person-card">
+                        <div class="person-avatar">R</div>
+                        <div class="person-info">
+                            <h3 class="person-name">Rohit Kumar</h3>
+                            <p class="person-college">Anna University</p>
+                            <div class="person-skills">
+                                <span class="skill-tag">Mobile Development</span>
+                                <span class="skill-tag">Flutter</span>
+                                <span class="skill-tag">Firebase</span>
+                            </div>
+                        </div>
+                        <div class="person-actions">
+                            <button class="btn btn-primary btn-sm" onclick="openProfileModal('rohit')">View Profile</button>
+                            <button class="btn btn-secondary btn-sm" onclick="openChat('rohit')">Message</button>
+                        </div>
+                    </div>
+
+                    <!-- Person Card 5 -->
+                    <div class="person-card">
+                        <div class="person-avatar">A</div>
+                        <div class="person-info">
+                            <h3 class="person-name">Ananya Reddy</h3>
+                            <p class="person-college">VIT University</p>
+                            <div class="person-skills">
+                                <span class="skill-tag">Data Science</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Machine Learning</span>
+                            </div>
+                        </div>
+                        <div class="person-actions">
+                            <button class="btn btn-primary btn-sm" onclick="openProfileModal('ananya')">View Profile</button>
+                            <button class="btn btn-secondary btn-sm" onclick="openChat('ananya')">Message</button>
+                        </div>
+                    </div>
+
+                    <!-- Person Card 6 -->
+                    <div class="person-card">
+                        <div class="person-avatar">V</div>
+                        <div class="person-info">
+                            <h3 class="person-name">Vikram Singh</h3>
+                            <p class="person-college">SRM Institute of Science and Technology</p>
+                            <div class="person-skills">
+                                <span class="skill-tag">Web Development</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">React</span>
+                            </div>
+                        </div>
+                        <div class="person-actions">
+                            <button class="btn btn-primary btn-sm" onclick="openProfileModal('vikram')">View Profile</button>
+                            <button class="btn btn-secondary btn-sm" onclick="openChat('vikram')">Message</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Profile Modal -->
+    <div class="modal-overlay" id="profileModal">
+        <div class="modal-content modal-large">
+            <button class="modal-close" onclick="closeProfileModal()">×</button>
+            <div class="modal-body" id="profileModalBody">
+                <!-- Profile details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script>
+        // Notification dropdown functionality
+        const notificationBell = document.getElementById('notificationBell');
+        const notificationDropdown = document.getElementById('notificationDropdown');
+        
+        notificationBell.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isVisible = notificationDropdown.style.display === 'block';
+            notificationDropdown.style.display = isVisible ? 'none' : 'block';
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!notificationBell.contains(e.target) && !notificationDropdown.contains(e.target)) {
+                notificationDropdown.style.display = 'none';
+            }
+        });
+
+        // Profile modal functionality
+        function openProfileModal(personId) {
+            const modal = document.getElementById('profileModal');
+            const modalBody = document.getElementById('profileModalBody');
+            
+            // Sample profile data
+            const profiles = {
+                'priya': {
+                    name: 'Priya Sharma',
+                    title: 'AI/ML Engineering Student | 3rd Year BTech CSE-Core',
+                    college: 'SRM Institute of Science and Technology',
+                    email: 'priya.sharma@gmail.com',
+                    linkedin: 'linkedin.com/in/priya-sharma',
+                    github: 'github.com/priya-sharma',
+                    about: 'Passionate AI/ML engineering student currently pursuing 3rd year BTech in Computer Science Engineering (Core) at SRM Institute of Science and Technology. I\'m a crazy coder who loves to work on innovative and interesting projects that push the boundaries of technology.',
+                    skills: {
+                        'Programming Languages': ['Python', 'Java', 'C++', 'JavaScript'],
+                        'AI/ML Technologies': ['TensorFlow', 'PyTorch', 'Scikit-learn', 'Keras'],
+                        'Web Technologies': ['React', 'Node.js', 'Express', 'MongoDB'],
+                        'Tools & Platforms': ['Git', 'Docker', 'AWS', 'Google Cloud']
+                    },
+                    interests: ['Artificial Intelligence', 'Machine Learning', 'Deep Learning', 'Computer Vision', 'Natural Language Processing'],
+                    projects: ['AI-Powered Study Assistant', 'Smart Campus Navigation', 'Emotion Recognition System']
+                }
+            };
+            
+            const profile = profiles[personId] || profiles['priya'];
+            
+            modalBody.innerHTML = `
+                <div class="profile-modal-content">
+                    <div class="profile-header">
+                        <div class="profile-avatar-large">${profile.name.charAt(0)}</div>
+                        <div class="profile-info">
+                            <h2 class="profile-name">${profile.name}</h2>
+                            <p class="profile-title">${profile.title}</p>
+                            <p class="profile-college">📍 ${profile.college}</p>
+                            <div class="profile-links">
+                                <a href="mailto:${profile.email}" class="profile-link">📧 ${profile.email}</a>
+                                <a href="https://${profile.linkedin}" class="profile-link">💼 ${profile.linkedin}</a>
+                                <a href="https://${profile.github}" class="profile-link">💻 ${profile.github}</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-sections">
+                        <div class="profile-section">
+                            <h3 class="section-title">About Me</h3>
+                            <p class="section-content">${profile.about}</p>
+                        </div>
+                        
+                        <div class="profile-section">
+                            <h3 class="section-title">Technical Skills</h3>
+                            <div class="skills-categories">
+                                ${Object.entries(profile.skills).map(([category, skills]) => `
+                                    <div class="skill-category">
+                                        <h4 class="skill-category-title">${category}</h4>
+                                        <div class="skill-tags">
+                                            ${skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        
+                        <div class="profile-section">
+                            <h3 class="section-title">Interests</h3>
+                            <div class="interest-tags">
+                                ${profile.interests.map(interest => `<span class="interest-tag">${interest}</span>`).join('')}
+                            </div>
+                        </div>
+                        
+                        <div class="profile-section">
+                            <h3 class="section-title">Recent Projects</h3>
+                            <ul class="project-list">
+                                ${profile.projects.map(project => `<li class="project-item">${project}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProfileModal() {
+            const modal = document.getElementById('profileModal');
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        function openChat(personId) {
+            // Redirect to personal chat page
+            window.location.href = 'personal-chat.html';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('profileModal').addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal-overlay')) {
+                closeProfileModal();
+            }
+        });
+
+        // Filter functionality
+        const searchInput = document.getElementById('searchInput');
+        const collegeFilter = document.getElementById('collegeFilter');
+        const skillsFilter = document.getElementById('skillsFilter');
+        const yearFilter = document.getElementById('yearFilter');
+
+        function filterPeople() {
+            // Add filter logic here
+            console.log('Filtering people...');
+        }
+
+        searchInput.addEventListener('input', filterPeople);
+        collegeFilter.addEventListener('change', filterPeople);
+        skillsFilter.addEventListener('change', filterPeople);
+        yearFilter.addEventListener('change', filterPeople);
+    </script>
+</body>
+</html>
+

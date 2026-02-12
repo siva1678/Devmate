@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - DevMate</title>
+    <meta name="description" content="Share and access project resources, documentation, and learning materials.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="../index.html" class="nav-logo">DevMate</a>
+                <ul class="nav-links">
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="discover.html" class="nav-link">Discover</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="teams.html" class="nav-link">Teams</a></li>
+                    <li><a href="team-chat.html" class="nav-link">Team Chat</a></li>
+                    <li><a href="personal-chat.html" class="nav-link">Personal Chat</a></li>
+                    <li><a href="events.html" class="nav-link">Events</a></li>
+                    <li><a href="resources.html" class="nav-link active">Resources</a></li>
+                    <!-- Notification Bell -->
+                    <li style="position: relative;">
+                        <button class="notification-bell" id="notificationBell" style="background: none; border: none; color: var(--text-primary); font-size: 1.25rem; cursor: pointer; position: relative;">
+                            🔔
+                            <span class="notification-dot" id="notification-dot" style="position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; background: #ef4444; border-radius: 50%; display: block;"></span>
+                        </button>
+                        <div class="notification-dropdown" id="notificationDropdown" style="position: absolute; top: 100%; right: 0; width: 300px; background: var(--bg-secondary); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 1rem; display: none; z-index: 1000; box-shadow: var(--shadow-lg);">
+                            <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.5rem;">Notifications</div>
+                            <div style="color: var(--text-secondary); font-size: 0.875rem; padding: 0.5rem 0; border-bottom: 1px solid var(--glass-border);">
+                                <span>New message from Priya Sharma</span>
+                                <span style="float: right; color: var(--text-muted);">2 min ago</span>
+                            </div>
+                            <div style="color: var(--text-secondary); font-size: 0.875rem; padding: 0.5rem 0;">
+                                <span>Your team "AI Study Assistant" has an update</span>
+                                <span style="float: right; color: var(--text-muted);">5 min ago</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content-full">
+        <div class="container">
+            <!-- Page Header -->
+            <section class="page-header">
+                <h1 class="page-title">Resources</h1>
+                <p class="page-subtitle">Share and access project resources, documentation, and learning materials</p>
+            </section>
+
+            <!-- Team Selection -->
+            <section class="team-selection-section">
+                <div class="team-selector">
+                    <label for="teamSelect" class="selector-label">Select Team:</label>
+                    <select id="teamSelect" class="team-select" onchange="loadTeamResources()">
+                        <option value="">Choose a team to view resources</option>
+                        <option value="ai-study-assistant">AI-Powered Study Assistant</option>
+                        <option value="sustainable-campus">Sustainable Campus App</option>
+                        <option value="blockchain-voting">Blockchain Voting System</option>
+                        <option value="smart-home">Smart Home Automation</option>
+                    </select>
+                    <button id="uploadBtn" class="btn btn-primary" onclick="openUploadModal()" disabled>
+                        📤 Upload Resource
+                    </button>
+                </div>
+            </section>
+
+            <!-- Resources Grid -->
+            <section class="resources-section" id="resourcesSection" style="display: none;">
+                <div class="resources-grid" id="resourcesGrid">
+                    <!-- Resources will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Empty State -->
+            <section class="empty-state" id="emptyState">
+                <div class="empty-state-content">
+                    <div class="empty-state-icon">📚</div>
+                    <h3 class="empty-state-title">Select a Team</h3>
+                    <p class="empty-state-description">Choose a team from the dropdown above to view and manage resources for that project.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Upload Modal -->
+    <div class="modal-overlay" id="uploadModal">
+        <div class="modal-content modal-small">
+            <div class="modal-header">
+                <h3 class="modal-title">Upload Resource</h3>
+                <button class="modal-close" onclick="closeUploadModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <form class="upload-form" onsubmit="uploadResource(event)">
+                    <div class="form-group">
+                        <label for="resourceTitle" class="form-label">Resource Title</label>
+                        <input type="text" id="resourceTitle" class="form-input" placeholder="Enter resource title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="resourceDescription" class="form-label">Description</label>
+                        <textarea id="resourceDescription" class="form-textarea" placeholder="Brief description of the resource" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="resourceType" class="form-label">Resource Type</label>
+                        <select id="resourceType" class="form-select" required>
+                            <option value="">Select type</option>
+                            <option value="document">Document</option>
+                            <option value="code">Code</option>
+                            <option value="design">Design</option>
+                            <option value="research">Research</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="resourceFile" class="form-label">File</label>
+                        <input type="file" id="resourceFile" class="form-file" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="closeUploadModal()">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script>
+        // Notification dropdown functionality
+        const notificationBell = document.getElementById('notificationBell');
+        const notificationDropdown = document.getElementById('notificationDropdown');
+        
+        notificationBell.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isVisible = notificationDropdown.style.display === 'block';
+            notificationDropdown.style.display = isVisible ? 'none' : 'block';
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!notificationBell.contains(e.target) && !notificationDropdown.contains(e.target)) {
+                notificationDropdown.style.display = 'none';
+            }
+        });
+
+        // Team selection functionality
+        function loadTeamResources() {
+            const teamSelect = document.getElementById('teamSelect');
+            const uploadBtn = document.getElementById('uploadBtn');
+            const resourcesSection = document.getElementById('resourcesSection');
+            const emptyState = document.getElementById('emptyState');
+            const resourcesGrid = document.getElementById('resourcesGrid');
+            
+            if (teamSelect.value) {
+                uploadBtn.disabled = false;
+                emptyState.style.display = 'none';
+                resourcesSection.style.display = 'block';
+                
+                // Sample resources data
+                const teamResources = {
+                    'ai-study-assistant': [
+                        {
+                            title: 'Project Requirements Document',
+                            description: 'Detailed requirements and specifications for the AI study assistant',
+                            type: 'document',
+                            author: 'Marthanda',
+                            date: '2024-01-15',
+                            size: '2.3 MB'
+                        },
+                        {
+                            title: 'Machine Learning Model Code',
+                            description: 'Python implementation of the recommendation algorithm',
+                            type: 'code',
+                            author: 'Priya Sharma',
+                            date: '2024-01-12',
+                            size: '856 KB'
+                        },
+                        {
+                            title: 'UI/UX Design Mockups',
+                            description: 'Figma designs for the mobile application interface',
+                            type: 'design',
+                            author: 'Kavya Nair',
+                            date: '2024-01-10',
+                            size: '4.1 MB'
+                        }
+                    ]
+                };
+                
+                const resources = teamResources[teamSelect.value] || [];
+                
+                resourcesGrid.innerHTML = resources.map(resource => `
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <div class="resource-icon">${getResourceIcon(resource.type)}</div>
+                            <div class="resource-info">
+                                <h3 class="resource-title">${resource.title}</h3>
+                                <p class="resource-description">${resource.description}</p>
+                            </div>
+                        </div>
+                        <div class="resource-meta">
+                            <span class="resource-author">By ${resource.author}</span>
+                            <span class="resource-date">${resource.date}</span>
+                            <span class="resource-size">${resource.size}</span>
+                        </div>
+                        <div class="resource-actions">
+                            <button class="btn btn-sm btn-secondary">Download</button>
+                            <button class="btn btn-sm btn-primary">Share</button>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                uploadBtn.disabled = true;
+                resourcesSection.style.display = 'none';
+                emptyState.style.display = 'block';
+            }
+        }
+
+        function getResourceIcon(type) {
+            const icons = {
+                document: '📄',
+                code: '💻',
+                design: '🎨',
+                research: '🔬',
+                other: '📎'
+            };
+            return icons[type] || '📎';
+        }
+
+        function openUploadModal() {
+            const modal = document.getElementById('uploadModal');
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeUploadModal() {
+            const modal = document.getElementById('uploadModal');
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+            
+            // Reset form
+            document.querySelector('.upload-form').reset();
+        }
+
+        function uploadResource(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const title = document.getElementById('resourceTitle').value;
+            const description = document.getElementById('resourceDescription').value;
+            const type = document.getElementById('resourceType').value;
+            const file = document.getElementById('resourceFile').files[0];
+            
+            // Simulate upload
+            alert(`Resource "${title}" uploaded successfully!`);
+            closeUploadModal();
+            
+            // Reload resources
+            loadTeamResources();
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('uploadModal').addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal-overlay')) {
+                closeUploadModal();
+            }
+        });
+    </script>
+</body>
+</html>
+

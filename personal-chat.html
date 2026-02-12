@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Chat - DevMate</title>
+    <meta name="description" content="Connect and chat individually with other developers on DevMate.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="../index.html" class="nav-logo">DevMate</a>
+                <ul class="nav-links">
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="discover.html" class="nav-link">Discover</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="teams.html" class="nav-link">Teams</a></li>
+                    <li><a href="team-chat.html" class="nav-link">Team Chat</a></li>
+                    <li><a href="personal-chat.html" class="nav-link active">Personal Chat</a></li>
+                    <li><a href="events.html" class="nav-link">Events</a></li>
+                    <li><a href="resources.html" class="nav-link">Resources</a></li>
+                    <!-- Notification Bell -->
+                    <li style="position: relative;">
+                        <button class="notification-bell" id="notificationBell" style="background: none; border: none; color: var(--text-primary); font-size: 1.25rem; cursor: pointer; position: relative;">
+                            🔔
+                            <span class="notification-dot" id="notification-dot" style="position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; background: #ef4444; border-radius: 50%; display: block;"></span>
+                        </button>
+                        <div class="notification-dropdown" id="notificationDropdown" style="position: absolute; top: 100%; right: 0; width: 300px; background: var(--bg-secondary); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 1rem; display: none; z-index: 1000; box-shadow: var(--shadow-lg);">
+                            <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.5rem;">Notifications</div>
+                            <div style="color: var(--text-secondary); font-size: 0.875rem; padding: 0.5rem 0; border-bottom: 1px solid var(--glass-border);">
+                                <span>New message from Priya Sharma</span>
+                                <span style="float: right; color: var(--text-muted);">2 min ago</span>
+                            </div>
+                            <div style="color: var(--text-secondary); font-size: 0.875rem; padding: 0.5rem 0;">
+                                <span>Your team "AI Study Assistant" has an update</span>
+                                <span style="float: right; color: var(--text-muted);">5 min ago</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2 class="sidebar-title">Dashboard</h2>
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-item-link">
+                            <span>🏠</span>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="discover.html" class="nav-item-link">
+                            <span>🔍</span>
+                            <span>Discover</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-item-link">
+                            <span>💡</span>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="teams.html" class="nav-item-link">
+                            <span>👥</span>
+                            <span>Teams</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="team-chat.html" class="nav-item-link">
+                            <span>💬</span>
+                            <span>Team Chat</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="personal-chat.html" class="nav-item-link">
+                            <span>📱</span>
+                            <span>Personal Chat</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="events.html" class="nav-item-link">
+                            <span>📅</span>
+                            <span>Events</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="resources.html" class="nav-item-link">
+                            <span>📚</span>
+                            <span>Resources</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="profile.html" class="nav-item-link">
+                            <span>👤</span>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- User Profile Card -->
+            <div class="glass-panel" style="margin-top: auto; padding: 1rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">
+                        M
+                    </div>
+                    <div>
+                        <div style="color: var(--text-primary); font-weight: 600; font-size: 0.875rem;">Marthanda</div>
+                        <div style="color: var(--text-muted); font-size: 0.75rem;">SRM Institute</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="chat-container">
+                <!-- Personal Chat List -->
+                <div class="team-list-sidebar" style="max-height: calc(100vh - 120px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--accent-primary) var(--bg-secondary);">
+                    <h3 style="color: var(--text-primary); margin-bottom: 1rem;">Your Contacts</h3>
+                    <ul id="contact-list">
+                        <li class="contact-item active" data-contact-id="contact1">
+                            <div class="avatar" style="background: linear-gradient(135deg, #FF6B6B, #4ECDC4);">PS</div>
+                            <span>Priya Sharma</span>
+                        </li>
+                        <li class="contact-item" data-contact-id="contact2">
+                            <div class="avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);">AP</div>
+                            <span>Arjun Patel</span>
+                        </li>
+                        <li class="contact-item" data-contact-id="contact3">
+                            <div class="avatar" style="background: linear-gradient(135deg, #FFD700, #FFA500);">AR</div>
+                            <span>Ananya Reddy</span>
+                        </li>
+                        <li class="contact-item" data-contact-id="contact4">
+                            <div class="avatar" style="background: linear-gradient(135deg, #4ECDC4, #C7F0BD);">RK</div>
+                            <span>Rohit Kumar</span>
+                        </li>
+                        <li class="contact-item" data-contact-id="contact5">
+                            <div class="avatar" style="background: linear-gradient(135deg, #f093fb, #f5576c);">KN</div>
+                            <span>Kavya Nair</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Chat Area -->
+                <div class="chat-area">
+                    <div class="chat-header">
+                        <h3 id="chat-contact-name" style="color: var(--text-primary);">Priya Sharma</h3>
+                    </div>
+                    <div class="messages-container" id="messages-container" style="max-height: calc(100vh - 280px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--accent-primary) var(--bg-secondary); padding: 1rem;">
+                        <!-- Messages will be loaded here -->
+                        <div class="message received">
+                            <div class="avatar" style="background: linear-gradient(135deg, #FF6B6B, #4ECDC4);">PS</div>
+                            <div class="message-content">
+                                <span class="message-author">Priya Sharma</span>
+                                <p>Hey Marthanda, are you free to discuss the ML model integration for the study assistant project?</p>
+                                <span class="message-time">11:00 AM</span>
+                            </div>
+                        </div>
+                        <div class="message sent">
+                            <div class="message-content">
+                                <p>Hi Priya, yes, I am. I just finished setting up the environment. When works best for you?</p>
+                                <span class="message-time">11:05 AM</span>
+                            </div>
+                            <div class="avatar" style="background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));">M</div>
+                        </div>
+                    </div>
+                    <div class="message-input-area">
+                        <input type="text" placeholder="Type your message..." class="message-input">
+                        <button class="btn btn-primary">Send</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script>
+        function toggleNotifications() {
+            const dot = document.getElementById("notification-dot");
+            dot.style.display = dot.style.display === "none" ? "block" : "none";
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const contactItems = document.querySelectorAll(".contact-item");
+            const chatContactName = document.getElementById("chat-contact-name");
+            const messagesContainer = document.getElementById("messages-container");
+
+            const personalChats = {
+                contact1: [
+                    { author: "Priya Sharma", avatar: "PS", content: "Hey Marthanda, are you free to discuss the ML model integration for the study assistant project?", time: "11:00 AM", type: "received" },
+                    { author: "Marthanda", avatar: "M", content: "Hi Priya, yes, I am. I just finished setting up the environment. When works best for you?", time: "11:05 AM", type: "sent" }
+                ],
+                contact2: [
+                    { author: "Arjun Patel", avatar: "AP", content: "Marthanda, can you help me with a Flutter issue I'm facing in the Campus App?", time: "Yesterday", type: "received" },
+                    { author: "Marthanda", avatar: "M", content: "Sure Arjun, I'll take a look. Send me the details.", time: "Yesterday", type: "sent" }
+                ],
+                contact3: [
+                    { author: "Ananya Reddy", avatar: "AR", content: "Hi Marthanda, I need your input on the UI/UX for the Blockchain Voting System. Are you available for a quick call?", time: "2 days ago", type: "received" },
+                    { author: "Marthanda", avatar: "M", content: "Yes, Ananya. I'm free now. Let's connect.", time: "2 days ago", type: "sent" }
+                ],
+                contact4: [
+                    { author: "Rohit Kumar", avatar: "RK", content: "Marthanda, I'm stuck on a Python script for the code review tool. Can you assist?", time: "3 days ago", type: "received" },
+                    { author: "Marthanda", avatar: "M", content: "Of course, Rohit. I'll be online in 15 minutes.", time: "3 days ago", type: "sent" }
+                ],
+                contact5: [
+                    { author: "Kavya Nair", avatar: "KN", content: "Hey Marthanda, I'm working on the personalized learning platform. Do you have any ideas for gamification features?", time: "4 days ago", type: "received" },
+                    { author: "Marthanda", avatar: "M", content: "That's a great idea, Kavya! I have a few thoughts. Let's brainstorm later.", time: "4 days ago", type: "sent" }
+                ]
+            };
+
+            function loadMessages(contactId) {
+                messagesContainer.innerHTML = '';
+                personalChats[contactId].forEach(msg => {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.classList.add('message', msg.type);
+                    if (msg.type === 'received') {
+                        messageDiv.innerHTML = `
+                            <div class="avatar" style="background: linear-gradient(135deg, ${getAvatarColor(msg.avatar)});">${msg.avatar}</div>
+                            <div class="message-content">
+                                <span class="message-author">${msg.author}</span>
+                                <p>${msg.content}</p>
+                                <span class="message-time">${msg.time}</span>
+                            </div>
+                        `;
+                    } else {
+                        messageDiv.innerHTML = `
+                            <div class="message-content">
+                                <p>${msg.content}</p>
+                                <span class="message-time">${msg.time}</span>
+                            </div>
+                            <div class="avatar" style="background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));">${msg.avatar}</div>
+                        `;
+                    }
+                    messagesContainer.appendChild(messageDiv);
+                });
+                messagesContainer.scrollTop = messagesContainer.scrollHeight; // Scroll to bottom
+            }
+
+            function getAvatarColor(initials) {
+                switch(initials) {
+                    case 'PS': return '#FF6B6B, #4ECDC4';
+                    case 'AP': return '#667eea, #764ba2';
+                    case 'AR': return '#FFD700, #FFA500';
+                    case 'RK': return '#4ECDC4, #C7F0BD';
+                    case 'KN': return '#f093fb, #f5576c';
+                    case 'M': return 'var(--accent-primary), var(--accent-secondary)';
+                    default: return '#ccc, #999';
+                }
+            }
+
+            contactItems.forEach(item => {
+                item.addEventListener("click", () => {
+                    contactItems.forEach(i => i.classList.remove("active"));
+                    item.classList.add("active");
+                    const contactId = item.dataset.contactId;
+                    chatContactName.textContent = item.querySelector('span').textContent; // Update chat header
+                    loadMessages(contactId);
+                });
+            });
+
+            // Load initial chat for the active contact
+            loadMessages('contact1');
+        });
+    </script>
+</body>
+</html>
+
+

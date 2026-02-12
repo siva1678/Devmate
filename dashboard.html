@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - DevMate</title>
+    <meta name="description" content="Your personalized dashboard for managing projects, teams, and collaborations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" class="sidebar-logo">DevMate</a>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-item-link active">
+                            <span class="nav-icon">🏠</span>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="discover.html" class="nav-item-link">
+                            <span class="nav-icon">🔍</span>
+                            <span class="nav-text">Discover</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-item-link">
+                            <span class="nav-icon">💡</span>
+                            <span class="nav-text">Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="teams.html" class="nav-item-link">
+                            <span class="nav-icon">👥</span>
+                            <span class="nav-text">Teams</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="team-chat.html" class="nav-item-link">
+                            <span class="nav-icon">💬</span>
+                            <span class="nav-text">Team Chat</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="personal-chat.html" class="nav-item-link">
+                            <span class="nav-icon">📱</span>
+                            <span class="nav-text">Personal Chat</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="events.html" class="nav-item-link">
+                            <span class="nav-icon">📅</span>
+                            <span class="nav-text">Events</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="resources.html" class="nav-item-link">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text">Resources</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="profile.html" class="nav-item-link">
+                            <span class="nav-icon">👤</span>
+                            <span class="nav-text">Profile</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-content">
+                    <h1 class="page-title">Dashboard</h1>
+                    <div class="header-actions">
+                        <!-- Notification Bell -->
+                        <button class="notification-bell" id="notificationBell">
+                            🔔
+                            <span class="notification-dot"></span>
+                        </button>
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">Notifications</div>
+                            <div class="notification-item">
+                                <span>New message from Priya Sharma</span>
+                                <span class="notification-time">2 min ago</span>
+                            </div>
+                            <div class="notification-item">
+                                <span>Your team "AI Study Assistant" has an update</span>
+                                <span class="notification-time">5 min ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content-area">
+                <!-- Welcome Section -->
+                <section class="welcome-section">
+                    <h2 class="welcome-title">Welcome back, Marthanda! 👋</h2>
+                </section>
+
+                <!-- Recommended Projects Section -->
+                <section class="recommended-section">
+                    <h3 class="section-title">Recommended for You</h3>
+                    <div class="horizontal-scroll-container">
+                        <div class="project-cards-horizontal">
+                            <div class="project-card-horizontal" onclick="openProjectModal('ai-study-assistant')">
+                                <h4 class="card-title">AI-Powered Study Assistant</h4>
+                                <div class="card-skills">
+                                    <span class="skill-tag">Machine Learning</span>
+                                    <span class="skill-tag">Flutter</span>
+                                </div>
+                                <p class="card-description">Develop an intelligent system to analyze student learning patterns and suggest personalized study paths.</p>
+                                <div class="card-meta">
+                                    <span>👥 3 Members</span>
+                                    <span>🔥 ML, Mobile Dev</span>
+                                </div>
+                                <button class="btn btn-primary card-button">View Project</button>
+                            </div>
+                            
+                            <div class="project-card-horizontal" onclick="openProjectModal('sustainable-campus')">
+                                <h4 class="card-title">Sustainable Campus App</h4>
+                                <div class="card-skills">
+                                    <span class="skill-tag">UI/UX</span>
+                                    <span class="skill-tag">Backend</span>
+                                    <span class="skill-tag">Mobile Dev</span>
+                                </div>
+                                <p class="card-description">Create a mobile application to promote eco-friendly practices and resource management on campus.</p>
+                                <div class="card-meta">
+                                    <span>👥 4 Members</span>
+                                    <span>🔥 UI/UX, Backend</span>
+                                </div>
+                                <button class="btn btn-primary card-button">View Project</button>
+                            </div>
+                            
+                            <div class="project-card-horizontal" onclick="openProjectModal('blockchain-voting')">
+                                <h4 class="card-title">Blockchain Voting System</h4>
+                                <div class="card-skills">
+                                    <span class="skill-tag">Blockchain</span>
+                                    <span class="skill-tag">Smart Contracts</span>
+                                </div>
+                                <p class="card-description">Develop a secure and transparent voting system using blockchain technology to ensure integrity.</p>
+                                <div class="card-meta">
+                                    <span>👥 2 Members</span>
+                                    <span>🔥 Blockchain, Security</span>
+                                </div>
+                                <button class="btn btn-primary card-button">View Project</button>
+                            </div>
+                            
+                            <div class="project-card-horizontal" onclick="openProjectModal('smart-home')">
+                                <h4 class="card-title">Smart Home Automation</h4>
+                                <div class="card-skills">
+                                    <span class="skill-tag">IoT</span>
+                                    <span class="skill-tag">Embedded Systems</span>
+                                </div>
+                                <p class="card-description">Build a system for automating home devices using IoT sensors and a central control unit.</p>
+                                <div class="card-meta">
+                                    <span>👥 3 Members</span>
+                                    <span>🔥 IoT, Hardware</span>
+                                </div>
+                                <button class="btn btn-primary card-button">View Project</button>
+                            </div>
+                            
+                            <div class="project-card-horizontal" onclick="openProjectModal('finance-tracker')">
+                                <h4 class="card-title">Personal Finance Tracker</h4>
+                                <div class="card-skills">
+                                    <span class="skill-tag">React</span>
+                                    <span class="skill-tag">Node.js</span>
+                                </div>
+                                <p class="card-description">Develop a comprehensive web application to help students track expenses and manage budgets.</p>
+                                <div class="card-meta">
+                                    <span>👥 2 Members</span>
+                                    <span>🔥 Web Dev, Backend</span>
+                                </div>
+                                <button class="btn btn-primary card-button">View Project</button>
+                            </div>
+                            
+                            <div class="project-card-horizontal" onclick="openProjectModal('vr-game')">
+                                <h4 class="card-title">Educational VR Game</h4>
+                                <div class="card-skills">
+                                    <span class="skill-tag">Unity</span>
+                                    <span class="skill-tag">VR Development</span>
+                                </div>
+                                <p class="card-description">Create an immersive virtual reality educational game that makes learning interactive and engaging.</p>
+                                <div class="card-meta">
+                                    <span>👥 4 Members</span>
+                                    <span class="skill-tag">🔥 VR, Game Dev</span>
+                                </div>
+                                <button class="btn btn-primary card-button">View Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Dashboard Grid -->
+                <div class="dashboard-grid">
+                    <!-- Recent Activity -->
+                    <section class="activity-section">
+                        <h3 class="section-title">Recent Activity</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <p class="activity-text">Priya Sharma commented on "AI-Powered Study Assistant" project.</p>
+                            </div>
+                            <div class="activity-item">
+                                <p class="activity-text">You joined the "Sustainable Campus App" team.</p>
+                            </div>
+                            <div class="activity-item">
+                                <p class="activity-text">Arjun Patel uploaded a new resource to "Blockchain Voting System".</p>
+                            </div>
+                            <div class="activity-item">
+                                <p class="activity-text">Kavya Nair completed a task in "Personal Finance Tracker".</p>
+                            </div>
+                            <div class="activity-item">
+                                <p class="activity-text">New project "Gesture Control Interface" was posted.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Quick Stats -->
+                    <section class="stats-section">
+                        <h3 class="section-title">Quick Stats</h3>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-number">5</div>
+                                <div class="stat-label">Active Projects</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">12</div>
+                                <div class="stat-label">Team Members</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">3</div>
+                                <div class="stat-label">Completed</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">8</div>
+                                <div class="stat-label">Messages</div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Project Modal -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Project Details</h3>
+                <button class="modal-close" onclick="closeProjectModal()">×</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Project details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script>
+        // Notification functionality
+        const notificationBell = document.getElementById('notificationBell');
+        const notificationDropdown = document.getElementById('notificationDropdown');
+        
+        notificationBell.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isVisible = notificationDropdown.style.display === 'block';
+            notificationDropdown.style.display = isVisible ? 'none' : 'block';
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!notificationBell.contains(e.target) && !notificationDropdown.contains(e.target)) {
+                notificationDropdown.style.display = 'none';
+            }
+        });
+
+        // Project modal functionality
+        function openProjectModal(projectId) {
+            const modal = document.getElementById('projectModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+            
+            const projects = {
+                'ai-study-assistant': {
+                    title: 'AI-Powered Study Assistant',
+                    description: 'Develop an intelligent system to analyze student learning patterns and suggest personalized study paths using machine learning algorithms.',
+                    skills: ['Machine Learning', 'Flutter', 'Python', 'TensorFlow'],
+                    members: 3,
+                    status: 'Open for Members'
+                },
+                'sustainable-campus': {
+                    title: 'Sustainable Campus App',
+                    description: 'Create a mobile application to promote eco-friendly practices and resource management on campus.',
+                    skills: ['UI/UX', 'Backend', 'Mobile Dev', 'Firebase'],
+                    members: 4,
+                    status: 'Open for Members'
+                },
+                'blockchain-voting': {
+                    title: 'Blockchain Voting System',
+                    description: 'Develop a secure and transparent voting system using blockchain technology to ensure integrity.',
+                    skills: ['Blockchain', 'Smart Contracts', 'Solidity', 'Web3'],
+                    members: 2,
+                    status: 'In Progress'
+                }
+            };
+            
+            const project = projects[projectId];
+            if (project) {
+                modalTitle.textContent = project.title;
+                modalBody.innerHTML = `
+                    <div class="project-details">
+                        <p class="project-description">${project.description}</p>
+                        <div class="project-info">
+                            <div class="info-item">
+                                <strong>Required Skills:</strong>
+                                <div class="skills-list">
+                                    ${project.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <strong>Team Size:</strong> ${project.members} members
+                            </div>
+                            <div class="info-item">
+                                <strong>Status:</strong> <span class="status-badge">${project.status}</span>
+                            </div>
+                        </div>
+                        <div class="modal-actions">
+                            <button class="btn btn-primary">Join Project</button>
+                            <button class="btn btn-secondary">Contact Team</button>
+                        </div>
+                    </div>
+                `;
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('projectModal').addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal-overlay')) {
+                closeProjectModal();
+            }
+        });
+    </script>
+</body>
+</html>
+
+    <!-- Main Content -->
+    <main class="main-content-full">
+        <div class="container">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <h1 class="welcome-title">Welcome back, Marthanda! 👋</h1>
+            </section>
+
+            <!-- Recommended Section -->
+            <section class="recommended-section">
+                <h2 class="section-title">Recommended for You</h2>
+                <div class="horizontal-scroll-container">
+                    <div class="project-cards-horizontal">
+                        <!-- Project Card 1 -->
+                        <div class="project-card-horizontal" onclick="openProjectModal('ai-study-assistant')">
+                            <h3 class="card-title">AI-Powered Study Assistant</h3>
+                            <div class="card-skills">
+                                <span class="skill-tag">Machine Learning</span>
+                                <span class="skill-tag">Flutter</span>
+                            </div>
+                            <p class="card-description">Develop an intelligent system to analyze student learning patterns and suggest personalized study paths.</p>
+                            <div class="card-meta">
+                                <span class="card-members">👥 3 Members</span>
+                            </div>
+                            <button class="btn btn-primary card-button" onclick="event.stopPropagation(); openProjectModal('ai-study-assistant')">View Project</button>
+                        </div>
+
+                        <!-- Project Card 2 -->
+                        <div class="project-card-horizontal" onclick="openProjectModal('sustainable-campus')">
+                            <h3 class="card-title">Sustainable Campus App</h3>
+                            <div class="card-skills">
+                                <span class="skill-tag">UI/UX</span>
+                                <span class="skill-tag">Backend</span>
+                                <span class="skill-tag">Mobile Dev</span>
+                            </div>
+                            <p class="card-description">Create a mobile application to promote eco-friendly practices and resource management on campus.</p>
+                            <div class="card-meta">
+                                <span class="card-members">👥 4 Members</span>
+                            </div>
+                            <button class="btn btn-primary card-button" onclick="event.stopPropagation(); openProjectModal('sustainable-campus')">View Project</button>
+                        </div>
+
+                        <!-- Project Card 3 -->
+                        <div class="project-card-horizontal" onclick="openProjectModal('blockchain-voting')">
+                            <h3 class="card-title">Blockchain Voting System</h3>
+                            <div class="card-skills">
+                                <span class="skill-tag">Blockchain</span>
+                                <span class="skill-tag">Smart Contracts</span>
+                            </div>
+                            <p class="card-description">Develop a secure and transparent voting system using blockchain technology to ensure integrity.</p>
+                            <div class="card-meta">
+                                <span class="card-members">👥 2 Members</span>
+                            </div>
+                            <button class="btn btn-primary card-button" onclick="event.stopPropagation(); openProjectModal('blockchain-voting')">View Project</button>
+                        </div>
+
+                        <!-- Project Card 4 -->
+                        <div class="project-card-horizontal" onclick="openProjectModal('smart-home')">
+                            <h3 class="card-title">Smart Home Automation</h3>
+                            <div class="card-skills">
+                                <span class="skill-tag">IoT</span>
+                                <span class="skill-tag">Embedded Systems</span>
+                            </div>
+                            <p class="card-description">Build a system for automating home devices using IoT sensors and a central control unit.</p>
+                            <div class="card-meta">
+                                <span class="card-members">👥 3 Members</span>
+                            </div>
+                            <button class="btn btn-primary card-button" onclick="event.stopPropagation(); openProjectModal('smart-home')">View Project</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Recent Activity -->
+                <section class="activity-section">
+                    <h2 class="section-title">Recent Activity</h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <span class="activity-text">Priya Sharma commented on "AI-Powered Study Assistant" project.</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-text">You joined the "Sustainable Campus App" team.</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-text">Arjun Patel uploaded a new resource to "Blockchain Voting System".</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-text">Kavya Nair completed a task in "Personal Finance Tracker".</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-text">New project "Gesture Control Interface" was posted.</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quick Stats -->
+                <section class="stats-section">
+                    <h2 class="section-title">Quick Stats</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">Active Projects</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">12</div>
+                            <div class="stat-label">Team Members</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Completed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">8</div>
+                            <div class="stat-label">Messages</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Project Modal -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeProjectModal()">×</button>
+            <div class="modal-body" id="projectModalBody">
+                <!-- Project details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script>
+        // Notification dropdown functionality
+        const notificationBell = document.getElementById('notificationBell');
+        const notificationDropdown = document.getElementById('notificationDropdown');
+        
+        notificationBell.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isVisible = notificationDropdown.style.display === 'block';
+            notificationDropdown.style.display = isVisible ? 'none' : 'block';
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!notificationBell.contains(e.target) && !notificationDropdown.contains(e.target)) {
+                notificationDropdown.style.display = 'none';
+            }
+        });
+
+        // Project modal functionality
+        function openProjectModal(projectId) {
+            const modal = document.getElementById('projectModal');
+            const modalBody = document.getElementById('projectModalBody');
+            
+            // Sample project data
+            const projects = {
+                'ai-study-assistant': {
+                    title: 'AI-Powered Study Assistant',
+                    description: 'Develop an intelligent system to analyze student learning patterns and suggest personalized study paths using machine learning algorithms. The system will integrate with existing educational resources and provide real-time feedback.',
+                    skills: ['Machine Learning', 'Python', 'TensorFlow', 'Flutter'],
+                    members: 3,
+                    status: 'Open for Members'
+                },
+                'sustainable-campus': {
+                    title: 'Sustainable Campus App',
+                    description: 'Create a comprehensive mobile application to promote eco-friendly practices and resource management on campus. Features include carbon footprint tracking, waste management optimization, and green event organization.',
+                    skills: ['React Native', 'Node.js', 'UI/UX Design', 'Firebase'],
+                    members: 4,
+                    status: 'Open for Members'
+                },
+                'blockchain-voting': {
+                    title: 'Blockchain Voting System',
+                    description: 'Build a secure and transparent voting system using blockchain technology to ensure integrity and prevent fraud. The system features smart contract-based vote recording and real-time result verification.',
+                    skills: ['Blockchain', 'Solidity', 'Web3.js', 'React'],
+                    members: 2,
+                    status: 'In Progress'
+                },
+                'smart-home': {
+                    title: 'Smart Home Automation',
+                    description: 'Build an intelligent home automation system that integrates IoT sensors, machine learning algorithms, and user-friendly interfaces to create a seamless smart living experience with energy optimization.',
+                    skills: ['IoT', 'Arduino', 'Mobile Development', 'Machine Learning'],
+                    members: 3,
+                    status: 'Open for Members'
+                }
+            };
+            
+            const project = projects[projectId];
+            if (project) {
+                modalBody.innerHTML = `
+                    <h2 class="modal-title">${project.title}</h2>
+                    <p class="modal-description">${project.description}</p>
+                    <div class="modal-skills">
+                        <h3>Required Skills:</h3>
+                        <div class="skill-tags">
+                            ${project.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div class="modal-meta">
+                        <p><strong>Team Members:</strong> ${project.members}</p>
+                        <p><strong>Status:</strong> ${project.status}</p>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="btn btn-primary">Join Project</button>
+                        <button class="btn btn-secondary">Contact Team</button>
+                    </div>
+                `;
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('projectModal').addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal-overlay')) {
+                closeProjectModal();
+            }
+        });
+    </script>
+</body>
+</html>
+

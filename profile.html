@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - DevMate</title>
+    <meta name="description" content="Marthanda's professional profile on DevMate.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="../index.html" class="nav-logo">DevMate</a>
+                <ul class="nav-links">
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="discover.html" class="nav-link">Discover</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="teams.html" class="nav-link">Teams</a></li>
+                    <li><a href="team-chat.html" class="nav-link">Team Chat</a></li>
+                    <li><a href="personal-chat.html" class="nav-link">Personal Chat</a></li>
+                    <li><a href="events.html" class="nav-link">Events</a></li>
+                    <li><a href="resources.html" class="nav-link">Resources</a></li>
+                    <!-- Notification Bell -->
+                    <li style="position: relative;">
+                        <button class="notification-bell" id="notificationBell" style="background: none; border: none; color: var(--text-primary); font-size: 1.25rem; cursor: pointer; position: relative;">
+                            🔔
+                            <span class="notification-dot" id="notification-dot" style="position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; background: #ef4444; border-radius: 50%; display: block;"></span>
+                        </button>
+                        <div class="notification-dropdown" id="notificationDropdown" style="position: absolute; top: 100%; right: 0; width: 300px; background: var(--bg-secondary); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 1rem; display: none; z-index: 1000; box-shadow: var(--shadow-lg);">
+                            <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.5rem;">Notifications</div>
+                            <div style="color: var(--text-secondary); font-size: 0.875rem; padding: 0.5rem 0; border-bottom: 1px solid var(--glass-border);">
+                                <span>New message from Priya Sharma</span>
+                                <span style="float: right; color: var(--text-muted);">2 min ago</span>
+                            </div>
+                            <div style="color: var(--text-secondary); font-size: 0.875rem; padding: 0.5rem 0;">
+                                <span>Your team "AI Study Assistant" has an update</span>
+                                <span style="float: right; color: var(--text-muted);">5 min ago</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content-full">
+        <div class="container">
+            <!-- Profile Header -->
+            <section class="profile-header-section">
+                <div class="profile-header-content">
+                    <div class="profile-avatar-container">
+                        <div class="profile-avatar-large">M</div>
+                    </div>
+                    <div class="profile-info">
+                        <h1 class="profile-name">Marthanda</h1>
+                        <p class="profile-title">AI/ML Engineering Student | 3rd Year BTech CSE-Core</p>
+                        <p class="profile-college">📍 SRM Institute of Science and Technology</p>
+                        <div class="profile-links">
+                            <a href="mailto:marthanda@gmail.com" class="profile-link">📧 marthanda@gmail.com</a>
+                            <a href="https://linkedin.com/in/marthanda" class="profile-link">💼 linkedin.com/in/marthanda</a>
+                            <a href="https://github.com/marthanda" class="profile-link">💻 github.com/marthanda</a>
+                        </div>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="btn btn-secondary">Share Profile</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Content -->
+            <div class="profile-content">
+                <!-- About Me Section -->
+                <section class="profile-section">
+                    <h2 class="section-title">About Me</h2>
+                    <div class="section-content">
+                        <p>Passionate AI/ML engineering student currently pursuing 3rd year BTech in Computer Science Engineering (Core) at SRM Institute of Science and Technology. I'm a crazy coder who loves to work on innovative and interesting projects that push the boundaries of technology.</p>
+                        
+                        <p>My journey in tech is driven by an insatiable curiosity to solve new and challenging tasks. I believe in the power of artificial intelligence and machine learning to transform the world, and I'm dedicated to being part of that transformation.</p>
+                        
+                        <p>When I'm not coding, you'll find me exploring the latest AI research papers, experimenting with new frameworks, or collaborating with fellow developers on exciting projects. I'm always eager to learn, share knowledge, and contribute to the tech community.</p>
+                    </div>
+                </section>
+
+                <!-- Technical Skills Section -->
+                <section class="profile-section">
+                    <h2 class="section-title">Technical Skills</h2>
+                    <div class="skills-categories">
+                        <div class="skill-category">
+                            <h3 class="skill-category-title">Programming Languages</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Java</span>
+                                <span class="skill-tag">C++</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">TypeScript</span>
+                                <span class="skill-tag">SQL</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3 class="skill-category-title">AI/ML Technologies</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">TensorFlow</span>
+                                <span class="skill-tag">PyTorch</span>
+                                <span class="skill-tag">Scikit-learn</span>
+                                <span class="skill-tag">Keras</span>
+                                <span class="skill-tag">OpenCV</span>
+                                <span class="skill-tag">NLTK</span>
+                                <span class="skill-tag">Pandas</span>
+                                <span class="skill-tag">NumPy</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3 class="skill-category-title">Web Technologies</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Express</span>
+                                <span class="skill-tag">MongoDB</span>
+                                <span class="skill-tag">PostgreSQL</span>
+                                <span class="skill-tag">HTML/CSS</span>
+                                <span class="skill-tag">REST APIs</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3 class="skill-category-title">Tools & Platforms</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">AWS</span>
+                                <span class="skill-tag">Google Cloud</span>
+                                <span class="skill-tag">Jupyter</span>
+                                <span class="skill-tag">VS Code</span>
+                                <span class="skill-tag">Linux</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Interests Section -->
+                <section class="profile-section">
+                    <h2 class="section-title">Interests</h2>
+                    <div class="interest-tags">
+                        <span class="interest-tag">Artificial Intelligence</span>
+                        <span class="interest-tag">Machine Learning</span>
+                        <span class="interest-tag">Deep Learning</span>
+                        <span class="interest-tag">Computer Vision</span>
+                        <span class="interest-tag">Natural Language Processing</span>
+                        <span class="interest-tag">Data Science</span>
+                        <span class="interest-tag">Web Development</span>
+                        <span class="interest-tag">Open Source</span>
+                        <span class="interest-tag">Research</span>
+                        <span class="interest-tag">Innovation</span>
+                    </div>
+                </section>
+
+                <!-- Recent Projects Section -->
+                <section class="profile-section">
+                    <h2 class="section-title">Recent Projects</h2>
+                    <div class="projects-list">
+                        <div class="project-item">
+                            <h3 class="project-name">AI-Powered Study Assistant</h3>
+                            <p class="project-description">Developed an intelligent system using machine learning to analyze student learning patterns and provide personalized study recommendations.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">React</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <h3 class="project-name">Smart Campus Navigation</h3>
+                            <p class="project-description">Built a mobile application that uses computer vision and GPS to help students navigate campus efficiently with real-time updates.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <h3 class="project-name">Emotion Recognition System</h3>
+                            <p class="project-description">Created a real-time emotion detection system using deep learning that can analyze facial expressions with high accuracy.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">CNN</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/app.js"></script>
+    <script>
+        // Notification dropdown functionality
+        const notificationBell = document.getElementById('notificationBell');
+        const notificationDropdown = document.getElementById('notificationDropdown');
+        
+        notificationBell.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isVisible = notificationDropdown.style.display === 'block';
+            notificationDropdown.style.display = isVisible ? 'none' : 'block';
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!notificationBell.contains(e.target) && !notificationDropdown.contains(e.target)) {
+                notificationDropdown.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
+

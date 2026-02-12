@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevMate - Build. Connect. Innovate.</title>
+    <meta name="description" content="The ultimate platform for student developers to connect, collaborate, and create amazing projects together.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="nav-logo">DevMate</a>
+                <ul class="nav-links">
+                    <li><a href="#features" class="nav-link">Features</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="pages/dashboard.html" class="nav-link">Dashboard</a></li>
+                </ul>
+                <a href="pages/onboarding.html" class="btn btn-primary">Get Started</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Rotating Element -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <h1 class="hero-title">Build. Connect. Innovate.</h1>
+                <p class="hero-subtitle">
+                    The ultimate platform for student developers to find teammates, 
+                    collaborate on projects, and participate in hackathons. 
+                    Transform your ideas into reality with the perfect team.
+                </p>
+                <div class="hero-buttons">
+                    <a href="pages/onboarding.html" class="btn btn-primary">Start Building</a>
+                    <a href="#features" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <!-- Rotating 3D Element -->
+        <div class="rotating-element">
+            <img src="assets/images/shape1.png" alt="3D Geometric Shape" id="rotatingShape">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <h2 class="section-title">Why Choose DevMate?</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3 class="card-title">🔍 Smart Team Matching</h3>
+                    <p class="card-description">
+                        Our intelligent algorithm matches you with developers who have 
+                        complementary skills and share your passion for innovation.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">AI-Powered</span>
+                        <span class="tag">Skill-Based</span>
+                        <span class="tag">College Network</span>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">💡 Project Discovery</h3>
+                    <p class="card-description">
+                        Explore exciting projects from students worldwide. Filter by 
+                        technology, college, and project type to find your perfect match.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Public & Private</span>
+                        <span class="tag">Advanced Filters</span>
+                        <span class="tag">Real-time Updates</span>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">🏆 Hackathon Ready</h3>
+                    <p class="card-description">
+                        Form teams quickly for hackathons and competitions. Access 
+                        event calendars and connect with like-minded participants.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Event Integration</span>
+                        <span class="tag">Quick Formation</span>
+                        <span class="tag">Competition Focus</span>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">💬 Professional Workspace</h3>
+                    <p class="card-description">
+                        Collaborate seamlessly with integrated team chat, personal messaging, 
+                        and project resource sharing designed for student developers.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Team Chat</span>
+                        <span class="tag">Personal Chat</span>
+                        <span class="tag">Resource Sharing</span>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">📚 Project Resources</h3>
+                    <p class="card-description">
+                        Share and access project-specific resources, documentation, and 
+                        learning materials within your team workspace.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">File Sharing</span>
+                        <span class="tag">Documentation</span>
+                        <span class="tag">Team Library</span>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">🌟 Portfolio Building</h3>
+                    <p class="card-description">
+                        Showcase your projects, skills, and achievements. Build a 
+                        professional portfolio that stands out to recruiters and peers.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Professional Profiles</span>
+                        <span class="tag">Project Showcase</span>
+                        <span class="tag">Achievement System</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="glass-panel text-center">
+                <h2 class="section-title">About DevMate</h2>
+                <p style="font-size: 1.125rem; max-width: 800px; margin: 0 auto;">
+                    DevMate bridges the gap between talented student developers who have great ideas 
+                    but lack the complete skill set to bring them to life. Whether you're a machine 
+                    learning enthusiast looking for a Flutter developer, or a backend expert seeking 
+                    a UI/UX designer, DevMate helps you find the perfect teammates from your college 
+                    or nearby institutions.
+                </p>
+                <div style="margin-top: 2rem;">
+                    <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                        <div style="text-align: center;">
+                            <h3 style="color: var(--accent-primary); font-size: 2.5rem; margin-bottom: 0.5rem;">15K+</h3>
+                            <p>Student Developers</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <h3 style="color: var(--accent-secondary); font-size: 2.5rem; margin-bottom: 0.5rem;">750+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <h3 style="color: var(--accent-primary); font-size: 2.5rem; margin-bottom: 0.5rem;">150+</h3>
+                            <p>Colleges Connected</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <h3 style="color: var(--accent-secondary); font-size: 2.5rem; margin-bottom: 0.5rem;">85+</h3>
+                            <p>Hackathons Won</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Ready to Start Building?</h2>
+            <div class="text-center">
+                <p style="font-size: 1.125rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Join thousands of student developers who are already collaborating on amazing projects. 
+                    Your next breakthrough is just one team away.
+                </p>
+                <div class="hero-buttons">
+                    <a href="pages/onboarding.html" class="btn btn-primary">Join DevMate Today</a>
+                    <a href="pages/dashboard.html" class="btn btn-gold">Explore Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--bg-secondary); padding: 2rem 0; margin-top: 4rem; border-top: 1px solid var(--glass-border);">
+        <div class="container text-center">
+            <p style="color: var(--text-muted);">
+                © 2025 DevMate. Empowering student developers worldwide.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
+
